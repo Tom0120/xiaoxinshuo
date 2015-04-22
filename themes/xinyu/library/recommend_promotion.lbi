@@ -1,0 +1,189 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="layout style0 yxl" style="float:left;margin-top:30px;">
+<div class="hd">
+<div class="mt-tag-elem">品牌特卖</div>            
+<span>我们每天都在搞促销</span>
+<b class="border"></b>
+</div>
+</div>
+<!--左侧-->
+<!-- {if $topic_list} -->
+<ul class="sis-li">
+<!--{foreach from=$topic_list item=topic}-->
+<li class="sis-li1">
+<a href="topic.php?topic_id={$topic.id}">
+<span class="v1">
+<img src="{$topic.topic_img}" style="width:712px;height:296px;"/>
+</span>
+<span class="v2">
+<h4>{$topic.title}&nbsp;&nbsp;&nbsp;&nbsp;{$topic.keywords}</h4>
+</span>
+</a>
+</li>
+<!--{/foreach}-->
+</ul>
+<!-- {/if} -->
+<script type="text/javascript">
+$(document).ready(function(){
+$("span.div").hide();
+$(".sis-li li").hover(function(){
+$("span.div",this).slideToggle(500);
+});
+
+$(".imgtext").hide();
+$(".zzsc").hover(function(){
+$(".imgtext",this).slideToggle(500);
+});
+});
+</script>
+<!--右侧-->
+<div class="g-fixed-r">
+<div class="m-class-entry">
+<!--{foreach from=$banner3 item=banner3}-->
+<a title="{$banner3.title}" href="{$banner3.ad_link}" target="_blank" class="class-entry-item">
+<img src="{$banner3.ad_code}" alt="{$banner3.title}" width="238" height="60" class="class-entry-img">
+<span class="class-entry-icon">&gt;</span>
+</a> 
+<!--{/foreach}-->
+</div>
+
+<!-- 焦点轮播广告模版 开始-->
+<script type="text/javascript">
+$(function(){
+var aPage = $('#main .page a');		//分页按钮
+var aImg = $('#main .box img');		//图像集合
+var iSize = aImg.size();		//图像个数
+var index = 0;		//切换索引
+var t;
+$('#btnLeft').click(function(){		//左边按钮点击
+index--;
+if(index<0){
+index=iSize-1
+}
+change(index)
+})
+$('#btnRight').click(function(){    //右边按钮点击
+index++;
+if(index>iSize-1){
+index=0
+}
+change(index)
+})
+//分页按钮点击
+aPage.click(function(){
+index = $(this).index();
+change(index)
+});
+//切换过程
+function change(index){
+aPage.removeClass('active');
+aPage.eq(index).addClass('active');
+aImg.stop();
+//隐藏除了当前元素，所以图像
+aImg.eq(index).siblings().animate({
+opacity:0
+},1000)
+//显示当前图像
+aImg.eq(index).animate({
+opacity:1
+},1000)
+}
+function autoshow() {
+index=index+1;
+if(index<=iSize-1){
+change(index);
+}else{
+index=0;
+change(index);
+}
+}
+int=setInterval(autoshow,3000);
+function clearInt() {
+$('#btnLeft,#btnRight,.page a').mouseover(function() {
+clearInterval(int);
+})
+}
+function setInt() {
+$('#btnLeft,#btnRight,.page a').mouseout(function() {
+int=setInterval(autoshow,3000);
+})
+}
+clearInt();
+setInt();
+})
+</script>
+<div id="main">
+<p>热推品牌</p>
+<div class="box">
+<img style="opacity:1;filter:alpha(opacity=100);" src="http://a.vpimg4.com/upload/cmc/2015/03/06/47/c0fd75db267f4086b16e2dd4847c36aa.jpg" />
+<img src="http://a.vpimg2.com/upload/cmc/2015/03/06/62/155f0002587846638f43ce1555705af1.jpg" /> 
+<img src="http://a.vpimg3.com/upload/cmc/2015/03/06/46/4cbc8eff668e44b0902951c8691c7656.jpg" />
+</div>
+<div class="page">
+<a class="active" href="javascript:void(0);">1</a>
+<a href="javascript:void(0);">2</a> <a href="javascript:void(0);">3</a>
+</div>
+<a class="btnLeft" id="btnLeft" href="javascript:void(0);"></a>
+<a class="btnRight" id="btnRight" href="javascript:void(0);"></a>
+</div>
+<!-- 焦点轮播广告模版结束 -->
+<!----------------------------华丽分割线--------------------------------------------------------->
+<script>
+$(function(){
+var aLi = $('#brand .bd-box li');
+var aImg =  $('#brand .bd-box li img');
+var aSpan = $('#brand .bd-box li span');
+aLi.each(function(index){
+$(this).mouseover(function(){
+aSpan.eq(index).stop();
+aImg.eq(index).stop();
+aImg.eq(index).css({zIndex:1}).animate({
+top:37,
+height:0
+},80,'',function(){
+$(this).hide();
+aSpan.eq(index).show().css({zIndex:2}).animate({
+top:0,
+height:75
+},80)
+})
+})
+$(this).mouseout(function(){
+aSpan.eq(index).stop();
+aImg.eq(index).stop();
+aSpan.eq(index).css({zIndex:1}).animate({
+top:37,
+height:0
+},80,'',function(){
+$(this).hide();
+aImg.eq(index).show().css({zIndex:2}).animate({
+top:0,
+height:75
+},80)
+})
+})
+})
+})
+</script>
+<div id="brand">
+<div class='title'>
+热门品牌推荐
+</div>
+<ul class='bd-box'>
+ <!--{foreach from=$best_goods item=goods}-->
+<li>
+<a href="brand.php?id={$goods.brand_id}"> </a>
+<img src="data/brandlogo/{$goods.brand_logo}" style="width:120px;height:77px;"/>
+<span>{$goods.brand_name}</span>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+<!--{foreach from=$banner19 item=banner19}-->
+<div id="main1">
+<div class="box1">
+<a title="{$banner19.title}" href="{$banner19.ad_link}" target="_blank"><img style="opacity:1;filter:alpha(opacity=100);" src="{$banner19.ad_code}"/></a>
+</div>
+</div>
+<!--{/foreach}-->
+</div>

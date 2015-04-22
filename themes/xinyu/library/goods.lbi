@@ -1,0 +1,147 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="cover-page-foot fl wfs">
+<p class="subnav">
+
+<!-- {if $navigator_list.bottom} -->
+   <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
+        <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
+        <!-- {if !$smarty.foreach.nav_bottom_list.last} -->
+           -
+        <!-- {/if} -->
+      <!-- {/foreach} -->
+  <!-- {/if} -->
+</p>
+<p class="copyright">{$copyright}</p>
+<p class="address"> {$shop_address}<div style= </p>
+<p class="verify">
+<a href="#"><img src="images/cover-page-foot-3.png" alt="可信网站"></a>
+<a href="#"><img src="images/cover-page-foot-4.png" alt="可信网站"></a>
+<a href="#"><img src="images/cover-page-foot-6.png" alt="财付通"></a>
+<a href="#"><img src="images/bottom_large_img.png" alt="可信网站"></a>
+<a href="#"><img src="images/bottom_large_img.png" alt="可信网站"></a>
+</p>
+</div>
+<script src="themes/xinyu/js/zzsc.js"></script>
+<script src="themes/xinyu/js/posfixed.js"></script>
+<script>
+
+//放大镜效果
+$(".j-details-mid-item").jqueryzoom({
+xzoom:440,
+yzoom:440,
+offset:10,
+position:"right",
+preload:1,
+lens:1
+});
+$(".j-canvas-container li").bind("click",function(){
+var data = '';
+data = $(this).find("img").attr("data");
+if(data){
+var reg = /mp4/;
+if(reg.test(data)){
+$(".j-details-mid-item").html('<div style="width: 400px;height: 400px;overflow:hidden;"><iframe src="http://player.ecmoban.com/player.php/gid//v.swf?width=400&height=400" scrolling="no" allowfullscreen="" frameborder="0" height="400" width="400"></iframe></div>');
+}else{
+$(".j-details-mid-item").html('<embed type="application/x-shockwave-flash" class="edui-faked-video" pluginspage="http://www.macromedia.com/go/getflashplayer" src="'+data+'" width="400" height="400" wmode="transparent" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true">');
+}
+return ;
+}
+$(".j-details-mid-item").html('<img src="" jqimg="" alt="">');
+var src=$(this).find("img").attr("src");
+$(".j-details-mid-item img").eq(0).attr({
+src:src.replace("\/n5\/","\/n1\/"),
+jqimg:src.replace("\/n5\/","\/n0\/")
+});
+});
+//导航那个悬浮
+$(".j-nav").posfixed({
+distance:0,
+pos:"top",
+type:"while",
+hide:false
+});
+//搜索框下拉框效果
+$(".search-box").mousedown(function(){
+$(".j-search-history").show();
+});
+$("form[name='searchForm']").mouseleave(function(){
+$(".j-search-history").hide();
+})
+function clear_search()
+{
+$.post('search.php?act=clear', '', clear_searchhtml, 'JSON');
+}
+function clear_searchhtml(){
+$('.history-items').html('');
+}
+
+
+</script>
+<div style="display:none;">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8513c8e18c0a7dc33633b4e6b1880ecb' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+<script src="js/suspension.js"></script>
+<!--[if IE 6]> 
+<script src="js/ie6-tips.js"></script>
+<![endif]-->
+<script>
+// 商品动画
+var move=function(wrap,cname){
+
+$("."+wrap).each(function(){
+var obj=$(this).find("."+cname);
+var p=obj.find("p");
+$(this).hover(function(){
+p.stop().animate({height:20},200);
+$(this).addClass("active");
+},function(){
+p.stop().animate({height:0},200);
+$(this).removeClass("active");
+});
+});
+}
+move("j-items-li","wrap_div");
+//模板条件切换
+$(".j-icons a").click(function(){
+$(this).addClass("now").siblings("a").removeClass("now");
+$(".j-template-items").eq($(this).index()).show().siblings(".j-template-items").hide();
+});
+// 排序切换
+$(".j-sort-icons a").click(function(){
+$(this).addClass("now").siblings("a").removeClass("now");
+});
+//左侧隐藏和展开
+$(".j-hide-left").click(function(){
+if($(".j-left").css('left')!="-300px")
+{
+$(".j-left").animate({left: '-300px'}, "slow");
+$(".j-right").animate({left:"-300px"},"slow");
+$(".j-right").css({width:"100%"});
+$(this).children().addClass('now');
+}else
+{
+$(".j-left").animate({left: '0'}, "slow");
+$(".j-right").animate({left:"0px"},"slow");
+$(".j-right").css({width:"auto"});
+$(this).children().removeClass('now');
+}
+})
+$(".j-demo-l-dt").click(
+function(){
+if($(this).hasClass('now')){
+$(this).removeClass("now");
+$(this).siblings("dd").hide();
+}else{
+$(this).addClass("now");
+$(this).siblings("dd").show();
+}
+
+
+
+}
+);
+
+</script>

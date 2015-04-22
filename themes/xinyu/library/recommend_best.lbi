@@ -1,0 +1,36 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="layout style0 yxl" style="margin-top:30px;">
+	<div class="hd">
+		<div class="mt-tag-elem">精选商品</div>            
+		<span>我们每天为你提高更心仪的商品</span>
+		<b class="border"></b>
+		</div>
+	</div>
+	<!-- {if $best_goods} -->
+	<div class="boutique2 fl wfs" style="margin-top:20px;">
+	<div class="canvas" >
+	<ul class="items">
+	<!--{foreach from=$best_goods item=goods}-->
+	<li class="items-li j-items-li">
+	<a href="{$goods.url}">
+	<img src="{$goods.goods_img}" alt="{$goods.name|escape:html}" style="width:337px;height:223px;"/>
+	<h3 class="name">{$goods.name|truncate:20:"...":true}</h3>
+	<p>
+	<span>孝心价：
+	<!-- {if $goods.promote_price neq ""} -->
+	{$goods.promote_price}
+	<!-- {else}-->
+	{$goods.shop_price}
+	<!--{/if}-->
+	</span>
+	<span></span>
+	<span></span>
+	</p>
+	</a>
+	</li>
+	<!--{/foreach}-->
+	</ul>
+	</div>
+	</div>
+	<!-- {/if} -->
+</div>

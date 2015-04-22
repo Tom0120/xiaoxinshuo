@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+
+<link href="themes/xinyu/css/base.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="themes/xinyu/css/index.css">
+<link rel="stylesheet" href="themes/xinyu/css/cart_order.css">
+
+{* 包含脚本文件 *}
+{insert_scripts files='jquery-1.9.1.min.js,jquery.json.js,transport.js'}
+{insert_scripts files='common.js,shopping_flow.js,utils.js'}
+<script src="themes/xinyu/js/jquery.min.js"></script>
+</head>
+
+<body>
+<!------------------------ 华丽分割线--购物车共用导航开始--------------------->
+<!-- #BeginLibraryItem "/library/page_header1.lbi" --><!-- #EndLibraryItem -->
+<!------------------------ 华丽分割线--购物车共用导航结局--------------------->
+<!-- #BeginLibraryItem "/library/xinyu_flow_cart.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/xinyu_flow_login.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/xinyu_flow_consignee.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/xinyu_flow_checkout.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/xinyu_flow_done.lbi" --><!-- #EndLibraryItem -->
+<!------------------------ 华丽分割线--购物车共用主要部分结局--------------------->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

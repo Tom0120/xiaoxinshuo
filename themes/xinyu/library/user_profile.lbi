@@ -1,0 +1,135 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- 用户信息界面 start-->
+<!--{if $action eq 'profile'}-->
+<script type="text/javascript">
+{foreach from=$lang.profile_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+<div class="rightBox">
+<div class="rightTit"><h2><i></i>基本信息</h2> <span class="rt-couponInt">完善个人信息，可获得<strong class="redStrong">50</strong>金币！金币可以兑换商品哦，赶快行动吧</span></div>
+<div class="rightCon">
+<div class="zpBaseInfo">
+
+<div class="main">
+<div>
+<ul class="tab">
+<li>个人信息</li>
+<li>密码修改</li>
+</ul>
+</div>
+<div class="con">
+<div>
+
+<div class="zpPart1 clearfix" id="allInput" style="display:block;">
+<form name="formEdit" action="user.php" method="post" onSubmit="return userEdit()">
+<div class="zpInfo">
+<ul class="basePart">
+<li class="clearfix">
+<p class="zpName">用户名：</p>
+<span class="userCheckContact">{$info.username}</span>
+</li>
+<li class="clearfix">
+<p class="zpName"><strong>*</strong>昵称：</p>
+<input type="text" class="name" name="anotherName" id="anotherName" value="" maxlength="20"/> 
+<div class="acc">
+<div class="accNotic" style="display:none"><i></i><span>请输入昵称</span></div>
+</div>
+</li>
+<li class="clearfix">
+<p class="zpName">真实姓名：</p>
+<input type="text" class="realName" name="realName" id="realName" value="" maxlength="20"/>
+<div class="acc">
+<div id="realNameTS" class="accNotic" style="display:none"><i></i><span>请输入真实姓名</span></div>
+</div>
+</li>
+<li class="clearfix">
+<p class="zpName"><strong>*</strong>性别：</p>
+
+<input type="radio" class="zpSex" name="sex" value="0" {if $profile.sex==0}checked="checked"{/if} />
+<span class="zpSexText"> {$lang.secrecy}</span>
+<input type="radio" class="zpSex" name="sex" value="1" {if $profile.sex==1}checked="checked"{/if} />
+<span class="zpSexText"> {$lang.male}</span>
+<input type="radio" class="zpSex" name="sex" value="2" {if $profile.sex==2}checked="checked"{/if} />
+<span class="zpSexText"> {$lang.female}</span>
+</li>
+<li class="clearfix">
+<p class="zpName"><strong>*</strong>生日：</p>
+{html_select_date field_order=YMD prefix=birthday start_year=-60 end_year=+1 display_days=true month_format=%m day_value_format=%02d time=$profile.birthday}
+</li>
+</ul>
+<ul>
+<li class="clearfix">
+<p class="zpName">邮箱：</p>
+<span class="userCheckContact uEmail">
+<input name="email" type="text" value="{$profile.email}" size="25" class="inputBg" />
+</span>
+</li>
+{foreach from=$extend_info_list item=field}
+<!-- {if $field.id eq 6} -->
+<li class="clearfix">
+<p class="zpName">{$lang.passwd_question}：</p>
+<select name='sel_question'>
+<option value='0'>{$lang.sel_question}</option>
+{html_options options=$passwd_questions selected=$profile.passwd_question}
+</select>
+</li>
+<li class="clearfix">
+<p class="zpName"  <!-- {if $field.is_need} -->id="passwd_quesetion"<!--{/if}-->>{$lang.passwd_answer}：</p>
+<input name="passwd_answer" type="text" size="25"  class="detailAdd" maxlengt='20' value="{$profile.passwd_answer}"/><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
+</li>
+<!-- {else} -->
+<li class="clearfix">
+<p class="zpName" <!-- {if $field.is_need} -->id="extend_field{$field.id}i"<!--{/if}-->>{$field.reg_field_name}：</p>
+<input name="extend_field{$field.id}" type="text"  class="detailAdd" value="{$field.content}"/><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
+</li>
+<!-- {/if} -->
+{/foreach}
+</ul>
+</div>
+<input name="act" type="hidden" value="act_edit_profile" />
+<input name="submit" type="submit" value="{$lang.confirm_edit}"class="submitZpInfo" style="border:none;" />
+</form>
+</div>
+</div>
+<div>
+<div class="zpPart3 clearfix">
+<div class="zpInfo">
+<ul class="basePart">
+  <form name="formPassword" action="user.php" method="post" onSubmit="return editPassword()" >
+     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+       <li class="clearfix">
+         <p class="zpName">{$lang.old_password}：</p>
+          <input name="old_password" type="password" size="25"  class="inputBg" />
+       </li>
+        <li class="clearfix">
+        <p class="zpName">{$lang.new_password}：</p>
+          <input name="new_password" type="password" size="25"  class="inputBg" />
+        </li>
+        <li class="clearfix">
+         <p class="zpName">{$lang.confirm_password}：</p>
+         <input name="comfirm_password" type="password" size="25"  class="inputBg" />
+       </li>
+        <li class="clearfix">
+       
+	  <input name="act" type="hidden" value="act_edit_password" />
+            <input name="submit" type="submit" class="zpSub" style="border:none;" value="{$lang.confirm_edit}" />
+       
+        </li>
+      </table>
+    </form>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+$(".main").FengTab({titCell:".tab",mainCell:".con",defaultIndex:1,trigger:"click",titOnClassName:"on",showtime: 0});
+</script>
+</div>
+</div>
+</div>
+<!--{/if}-->
+<!--#用户信息界面 end-->
+

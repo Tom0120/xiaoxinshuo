@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='jquery-1.9.1.min.js,jquery.json.js,transport.js'}
+{insert_scripts files='common.js,user.js'}
+<link rel="stylesheet" href="themes/xinyu/css/user_logo.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header1.lbi" --><!-- #EndLibraryItem -->
+<div id="header_container">
+    <!--新版的login页面没有头部 -->
+    <div id="logo">
+        <a href="index.php" id="home" title="孝心说" style="background:url(themes/xinyu/images/logo.png ) no-repeat top left;"> </a>
+        <div class="header_logo_box">
+            <a href="#" rel="nofollow" class="top_link lightning" target="_blank"></a>
+            <a href="#" rel="nofollow" class="top_link gild" target="_blank"></a>
+            <a href="#" rel="nofollow" class="top_link credit" target="_blank"></a>
+        </div>
+    </div>
+</div>
+<!-- #BeginLibraryItem "/library/user_login.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_register.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_get_password.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_getback_password.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer1.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+{foreach from=$lang.passport_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var username_exist = "{$lang.username_exist}";
+</script>
+<SCRIPT language=JavaScript>  
+    function killErrors() {  
+    return true;  
+    }  
+    window.onerror = killErrors;  
+    </SCRIPT> 
+</html>

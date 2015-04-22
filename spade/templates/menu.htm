@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>孝心说 Menu</title>
+<link href="styles/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){	
+//导航切换
+$(".menuson li").click(function(){
+$(".menuson li.active").removeClass("active")
+$(this).addClass("active");
+});
+$('.title').click(function(){
+var $ul = $(this).next('ul');
+$('dd').find('ul').slideUp();
+if($ul.is(':visible')){
+$(this).next('ul').slideUp();
+}else{
+$(this).next('ul').slideDown();
+}
+});
+})	
+</script>
+</head>
+<body style="background:#f0f9fd;">
+<div class="lefttop"><a href="javascript:toggleCollapse();"><span></span></a>菜单导航</div>
+<dl class="leftmenu"> 
+{foreach from=$menus item=menu key=k name=top_goods}
+<dd><div class="title"><span>
+<!-- {if $smarty.foreach.top_goods.iteration eq 1}-->
+<img src="images/leftico01.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 2}-->
+<img src="images/leftico02.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 3}-->
+<img src="images/leftico03.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 4}-->
+<img src="images/leftico04.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 5}-->
+<img src="images/leftico01.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 6}-->
+<img src="images/leftico02.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 7}-->
+<img src="images/leftico03.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 8}-->
+<img src="images/leftico04.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 9}-->
+<img src="images/leftico01.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 10}-->
+<img src="images/leftico02.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 11}-->
+<img src="images/leftico03.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 12}-->
+<img src="images/leftico04.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 13}-->
+<img src="images/leftico01.png" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 14}-->
+<img src="images/leftico04.png" />
+<!-- {/if}-->
+</span>{$menu.label}</div>
+<ul class="menuson">
+ {foreach from=$menu.children item=child}
+<li><cite></cite><a href="{$child.action}" target="main-frame">{$child.label}</a><i></i></li>
+    {/foreach}
+</ul>
+</dd> 
+{/foreach}
+</dl>
+</body>
+</html>

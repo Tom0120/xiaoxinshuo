@@ -1,0 +1,36 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="detail-credit">
+<div class="credit-jyScore">
+<!-- {if $goods.goods_brand neq "" and $cfg.show_brand} 显示商品品牌-->
+<p class="jyScore-pic">
+<a href="{$goods.goods_brand_url}"  target="_blank">
+<img src="data/brandlogo/{$goods.brand_logo}" height="70" width="165" />   
+<span>{$goods.goods_brand}</span>
+</a>
+</p>
+<!--{/if}-->
+<p class="jyScore-strip"></p>
+<p class="jyScore-fra">孝友评分
+<span>
+<em style="width:63.92px;"></em>
+</span>
+
+</p>
+<p class="jyScore-com">孝友点评（<a href="#answerArea">共{insert name=comments_count type=$type id=$id}条评论</a>）</p>
+<!-- {if $goods.give_integral > 0} 购买此商品赠送积分-->     																																																																																																	    </div>
+<div class="credit-gold">赠送{$points_name}：<b id="_goldCoinNubStr">{$goods.give_integral}</b></div>
+<!-- {/if} -->
+<!-- {if $cfg.show_goodssn} 显示商品货号-->
+<div class="credit-proNum"><span>{$lang.goods_sn}{$goods.goods_sn}</span></div>
+<!-- {/if} -->
+<div class="credit-question">
+<span>
+<a href="http://www.jiuxian.com/pro/editAsk.htm?prodId=15644" target="_blank">商品纠错</a>
+<i></i>
+</span>
+<span>
+<a href="http://special.jiuxian.com/goldPlan.htm" target="_blank">什么是金币</a>
+<i></i>
+</span>
+</div>
+</div>

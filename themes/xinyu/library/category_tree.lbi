@@ -1,0 +1,68 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- 分类开始 -->
+<script language="javascript">
+function changeImg(obImg,sNewURL)
+{
+if(sNewURL!="") obImg.src=sNewURL;
+}
+</script>
+<div class="CFBtn">
+<div class="dot sCB">
+<div style=" position:absolute;left:34px;top:-2px;z-index:9999999">商品分类</div>
+<div class="fenlei" style="width:112px;height:40px;border-left:1px solid #EE4136;border-right:1px solid #EE4136;">
+<img style="cursor:hand;" src="themes/xinyu/images/fenlei.jpg"  width="110" height="40" onmouseover="changeImg(this,'themes/xinyu/images/fenleixia.jpg');" onmouseout="changeImg(this,'themes/xinyu/images/fenlei.jpg');">
+</div>
+<div class="CFCon dn">
+<div class="l left">
+<ul class="CateTitle">
+<!--{foreach from=$categories item=cat name=cat}-->
+<li {if $smarty.foreach.cat.iteration eq 1} class="current" {else}{/if}>
+<div class="ocicon"><div>
+{if $smarty.foreach.cat.iteration eq 1}
+<img src="http://img.miyabaobei.com/other/15212054710946.png" img1="http://img.miyabaobei.com/other/15212054706985.png" img2="http://img.miyabaobei.com/other/15212054710946.png" alt="" class="flimg">
+{/if}
+{if $smarty.foreach.cat.iteration eq 2}
+<img src="http://img.miyabaobei.com/other/15212062547389.png" img1="http://img.miyabaobei.com/other/15212062547389.png" img2="http://img.miyabaobei.com/other/15212062550131.png" alt="" class="flimg">
+{/if}
+{if $smarty.foreach.cat.iteration eq 3}
+<img src="http://img.miyabaobei.com/other/15212062719335.png" img1="http://img.miyabaobei.com/other/15212062719335.png" img2="http://img.miyabaobei.com/other/15212062722138.png" alt="" class="flimg">
+{/if}
+{if $smarty.foreach.cat.iteration eq 4}
+<img src="http://img.miyabaobei.com/other/15212062901133.png" img1="http://img.miyabaobei.com/other/15212062901133.png" img2="http://img.miyabaobei.com/other/15212062904265.png" alt="" class="flimg">
+{/if}
+{if $smarty.foreach.cat.iteration eq 5}
+<img src="http://img.miyabaobei.com/other/15212063403504.png" img1="http://img.miyabaobei.com/other/15212063403504.png" img2="http://img.miyabaobei.com/other/15212063406102.png" alt="" class="flimg">
+{/if}
+{if $smarty.foreach.cat.iteration eq 6}
+<img src="http://img.miyabaobei.com/other/15212063504225.png" img1="http://img.miyabaobei.com/other/15212063504225.png" img2="http://img.miyabaobei.com/other/15212063507959.png" alt="" class="flimg">
+{/if}
+{if $smarty.foreach.cat.iteration eq 7}
+<img src="http://img.miyabaobei.com/other/15212063602218.png" img1="http://img.miyabaobei.com/other/15212063602218.png" img2="http://img.miyabaobei.com/other/15212063604951.png" alt="" class="flimg">
+{/if}
+</div>
+</div>
+{$cat.name|escape:html}
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+<div class="l right CateCon">
+<!--{foreach from=$categories item=cat name=cat}-->
+<div class="tcate" {if $smarty.foreach.cat.iteration eq 1} style="display:block;width:663px;" {else}style="width:663px;"{/if}>
+<!--{foreach from=$cat.cat_id item=child}-->
+<div class="ctitle">
+<span>{$child.name|escape:html}</span>
+</div>
+<div class="ccon pb0">
+<!--{foreach from=$child.cat_id item=childer}-->
+<a href="{$childer.url}">{$childer.name|escape:html}</a>
+<!--{/foreach}-->
+</div>
+<!--{/foreach}-->
+</div>
+<!--{/foreach}-->
+</div>
+</div>
+</div>
+</div>
+<!-- 分类结束 -->

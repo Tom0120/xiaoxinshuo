@@ -1,0 +1,24 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--购买过此商品的人还买begin-->
+<!-- {if $bought_goods} -->
+<div class="alsoBuy">
+<h3>{$lang.shopping_and_other}</h3>
+<div class="list">
+<ul id="buy">
+ <!--{foreach from=$bought_goods item=bought_goods_data}-->
+<li><a class="img" href="{$bought_goods_data.url}" title="{$bought_goods_data.goods_name}" target="_blank"><img src="{$bought_goods_data.goods_thumb}g" alt="{$bought_goods_data.goods_name}"/></a>
+<a class="name" href="{$bought_goods_data.url}" title="{$bought_goods_data.goods_name}" target="_blank">40°加拿大水晶头骨伏特加750ml<span class="slogan"></span></a>
+<p class="price" id="buy_17493">
+<!-- {if $bought_goods_data.promote_price neq 0} -->
+{$bought_goods_data.formated_promote_price}
+<!-- {else} -->
+{$bought_goods_data.shop_price}
+<!-- {/if} -->
+</p>
+</li>
+ <!-- {/foreach} -->
+</ul>
+</div>
+</div>
+<!-- {/if} -->
+<!--最终购买end-->

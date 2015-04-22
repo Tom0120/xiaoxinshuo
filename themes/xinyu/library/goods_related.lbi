@@ -1,0 +1,25 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $related_goods} -->
+<div class="list_box_xg">
+<h4 class="list_box_xg_title">{$lang.releate_goods}</h4>
+<div class="list_xg">
+<!--{foreach from=$related_goods item=releated_goods_data}-->
+<ul class="goodsimg">
+<li>
+<a href="{$releated_goods_data.url}"><img src="{$releated_goods_data.goods_thumb}" alt="{$releated_goods_data.goods_name}" style="width:180px;height:180px;"/></a>
+<a href="{$releated_goods_data.url}" title="{$releated_goods_data.goods_name}">{$releated_goods_data.short_name}</a><br />
+<!-- {if $releated_goods_data.promote_price neq 0} -->
+<font class="f11">{$releated_goods_data.formated_promote_price}</font>
+<!-- {else} -->
+<font class="f11">{$releated_goods_data.shop_price}</font>
+<!-- {/if} -->
+<p class="listDep-but">
+<a  href="javascript:addToCart_choose({$releated_goods_data.goods_id})">加入购物车</a>
+</p>
+</li>
+</ul>
+<!--{/foreach}-->
+</div>
+</div>
+<div class="blank5"></div>
+<!-- {/if} -->

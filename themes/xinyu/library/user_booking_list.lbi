@@ -1,0 +1,77 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--*缺货登记列表页面 start-->
+<!--{if $action eq 'booking_list'} -->
+<div class="rightBox">
+<div class="rightTit"><h2><i></i>{$lang.label_booking}</h2></div>
+<div class="rightCon">
+<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+<tr align="center" height="35">
+<td width="20%" bgcolor="#ffffff">{$lang.booking_goods_name}</td>
+<td width="10%" bgcolor="#ffffff">{$lang.booking_amount}</td>
+<td width="20%" bgcolor="#ffffff">{$lang.booking_time}</td>
+<td width="35%" bgcolor="#ffffff">{$lang.process_desc}</td>
+<td width="15%" bgcolor="#ffffff">{$lang.handle}</td>
+</tr>
+<!-- {foreach from=$booking_list item=item} -->
+<tr height="35">
+<td align="left" bgcolor="#ffffff"><a href="{$item.url}" target="_blank" class="f6">{$item.goods_name}</a></td>
+<td align="center" bgcolor="#ffffff">{$item.goods_number}</td>
+<td align="center" bgcolor="#ffffff">{$item.booking_time}</td>
+<td align="left" bgcolor="#ffffff">{$item.dispose_note}</td>
+<td align="center" bgcolor="#ffffff"><a href="javascript:if (confirm('{$lang.confirm_remove_account}')) location.href='user.php?act=act_del_booking&id={$item.rec_id}'" class="f6">{$lang.drop}</a> </td>
+</tr>
+<!--{/foreach}-->
+</table>
+<!--{/if} -->
+<div class="blank5"></div>
+<!--#缺货登记列表页面 -->
+<!--{if $action eq 'add_booking'} -->
+{insert_scripts files='utils.js'}
+<script type="text/javascript">
+{foreach from=$lang.booking_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+<div class="rightTit"><h2><i></i>{$lang.add}{$lang.label_booking}<</h2></div>
+<form action="user.php" method="post" name="formBooking" onsubmit="return addBooking();">
+<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+<tr height="35">
+<td align="right" bgcolor="#ffffff">{$lang.booking_goods_name}</td>
+<td bgcolor="#ffffff">{$info.goods_name}</td>
+</tr>
+<tr height="35">
+<td align="right" bgcolor="#ffffff">{$lang.booking_amount}:</td>
+<td bgcolor="#ffffff"><input name="number" type="text" value="{$info.goods_number}" class="inputBg" /></td>
+</tr>
+<tr height="35">
+<td align="right" bgcolor="#ffffff">{$lang.describe}:</td>
+<td bgcolor="#ffffff"><textarea name="desc" cols="50" rows="5" wrap="virtual" class="B_blue">{$goods_attr}{$info.goods_desc|escape}</textarea>
+</td>s
+</tr>
+<tr height="35">
+<td align="right" bgcolor="#ffffff">{$lang.contact_username}:</td>
+<td bgcolor="#ffffff"><input name="linkman" type="text" value="{$info.consignee|escape}" size="25"  class="inputBg"/>
+</td>
+</tr>
+<tr height="35">
+<td align="right" bgcolor="#ffffff">{$lang.email_address}:</td>
+<td bgcolor="#ffffff"><input name="email" type="text" value="{$info.email|escape}" size="25" class="inputBg" /></td>
+</tr>
+<tr height="35">
+<td align="right" bgcolor="#ffffff">{$lang.contact_phone}:</td>
+<td bgcolor="#ffffff"><input name="tel" type="text" value="{$info.tel|escape}" size="25" class="inputBg" /></td>
+</tr>
+<tr height="35">
+<td align="right" bgcolor="#ffffff">&nbsp;</td>
+<td bgcolor="#ffffff"><input name="act" type="hidden" value="act_add_booking" />
+<input name="id" type="hidden" value="{$info.id}" />
+<input name="rec_id" type="hidden" value="{$info.rec_id}" />
+<input type="submit" name="submit" class="submit" value="{$lang.submit_booking_goods}" />
+<input type="reset" name="reset" class="reset" value="{$lang.button_reset}" />
+</td>
+</tr>
+</table>
+</form>
+</div>
+</div>
+<!-- {/if} -->

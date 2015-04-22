@@ -1,0 +1,92 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="tabBar">
+<div class="hd">
+<ul>
+<!--{foreach from=$thiscid2 item=list name=name}-->
+<li class="on">{$list.name}</li>
+{/foreach}
+</ul>
+</div>
+<div class="bd">
+<div class="conWrap">
+<div class="con">
+<ul class="floorcenter1">
+<!--{foreach from=$bestGoods2  item=goods name=goods1}-->
+{if $smarty.foreach.goods1.iteration lt 9}
+<li>
+<a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a>
+<p><a href="goods.php?id=4" title="{$goods.name|escape:html}">{$goods.name|truncate:20:"...":true}</a></p>
+<p class="price">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}-->
+</p>
+</li>
+<!--{/if}-->
+<!--{/foreach}-->
+</ul>  
+</div>
+<div class="con">
+<ul class="floorcenter1">
+<!--{foreach from=$bestGoods15  item=goods name=goods1}-->
+{if $smarty.foreach.goods1.iteration lt 9}
+<li>
+<a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a>
+<p><a href="goods.php?id=4" title="{$goods.name|escape:html}">{$goods.name|truncate:20:"...":true}</a></p>
+<p class="price">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}-->
+</p>
+</li>
+<!--{/if}-->
+<!--{/foreach}-->
+</ul>  
+</div>
+<div class="con">
+<ul class="floorcenter1">
+<!--{foreach from=$bestGoods16  item=goods name=goods1}-->
+{if $smarty.foreach.goods1.iteration lt 9}
+<li>
+<a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a>
+<p><a href="goods.php?id=4" title="{$goods.name|escape:html}">{$goods.name|truncate:20:"...":true}</a></p>
+<p class="price">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}-->
+</p>
+</li>
+<!--{/if}-->
+<!--{/foreach}-->
+</ul>  
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+$(".tabBar").slide({
+mainCell:".conWrap",
+effect:"left", 
+trigger:"click", 
+pnLoop:false
+});
+});
+</script>
+<!------------精选商品右侧----------------------->
+<!--div class="jx_right">
+<div class="hd">新品上市</div>
+<div class="conWrap">
+<ul>
+<!--{foreach from=$banner21 item=banner name=banner}-->
+<li><a href="{$banner.ad_link}"><img src="{$banner.ad_code}" width="190px" height="190px"/><li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div--->

@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="top fl wfs fz12">
+    <div class="wrapper">
+        <div class="left fl">欢迎登陆管理中心！</div>
+            <div class="right fr" >
+                您的账号：{$info.username}              <a href="http://www.xiaoxinshuo.com/user.php?act=profile">[修改密码]</a>
+                <a href="user.php?act=logout">[退出登录]</a>
+            </div>
+    </div>
+</div>
+<div class="head fl wfs">
+    <div class="wrapper">
+        <a class="logo" href="index.php"><img src="images/logo.png" alt="孝心说"></a>
+        <div class="nav">
+            <a class="index" href="index.php">首页</a>
+            <a class="member " href="user.php">会员中心</a>
+            <a class="order " href="user.php?act=order_list&num=1">订单中心</a>
+            <a class="account " href="user.php?act=account_detail">帐户中心</a>
+            <a class="service " href="user.php?act=message_list">售后服务</a>
+        </div>
+    </div>
+</div>
+

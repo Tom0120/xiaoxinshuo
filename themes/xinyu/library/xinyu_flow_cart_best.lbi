@@ -1,0 +1,30 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $fittings_list} 商品配件 -->
+<!--商品推荐-->
+<div class="cart-bList">
+		<div class="bList-tit"><p>购买了同样商品的顾客还购买了</p></div>
+<div class="bListBox">
+		<div class="bList-prev"><span></span></div>
+<div class="bList-con">
+ <form action="flow.php" method="post">
+		<div class="max">
+	<!-- {foreach from=$fittings_list item=fittings} -->	
+		<ul >
+		<li>
+		<div class="blc-pic"><a target="_blank" href="{$fittings.url}" ><img src="{$fittings.goods_thumb}" width="160" height="160"/></a></div>
+		<div class="blc-intro">
+		<p class="blc-int-name"><a target="_blank" href="{$fittings.url}">{$fittings.short_name|escape:html}</p>
+		<p class="blc-int-pri"><b><span _data="price" >{$fittings.fittings_price}</span></b></p>
+		<p class="blc-int-buy"><a href="javascript:fittings_to_flow({$fittings.goods_id},{$fittings.parent_id})"  name="add_to_cart_btn"></a></p>
+		</div>
+		</li>
+		</ul>
+  <!-- {/foreach} 循环商品配件结束 -->
+		</div>
+</form>
+</div>
+	<div class="bList-next"><span></span></div>
+	<div class="clear"></div>
+</div>
+</div>
+<!-- {/if} -->

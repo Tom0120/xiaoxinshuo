@@ -1,0 +1,137 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $step eq "login"} -->
+<link rel="stylesheet" href="themes/xinyu/css/cart_logo.css">
+
+{insert_scripts files='utils.js,user.js'}
+<script type="text/javascript">
+{foreach from=$lang.flow_login_register item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+{literal}
+function checkLoginForm(frm) {
+if (Utils.isEmpty(frm.elements['username'].value)) {
+alert(username_not_null);
+return false;
+}
+if (Utils.isEmpty(frm.elements['password'].value)) {
+alert(password_not_null);
+return false;
+}
+return true;
+}
+function checkSignupForm(frm) {
+if (Utils.isEmpty(frm.elements['username'].value)) {
+alert(username_not_null);
+return false;
+}
+if (Utils.trim(frm.elements['username'].value).match(/^\s*$|^c:\\con\\con$|[%,\'\*\"\s\t\<\>\&\\]/))
+{
+alert(username_invalid);
+return false;
+}
+if (Utils.isEmpty(frm.elements['email'].value)) {
+alert(email_not_null);
+return false;
+}
+if (!Utils.isEmail(frm.elements['email'].value)) {
+alert(email_invalid);
+return false;
+}
+
+if (Utils.isEmpty(frm.elements['password'].value)) {
+alert(password_not_null);
+return false;
+}
+
+if (frm.elements['password'].value.length < 6) {
+alert(password_lt_six);
+return false;
+}
+
+if (frm.elements['password'].value != frm.elements['confirm_password'].value) {
+alert(password_not_same);
+return false;
+}
+return true;
+}
+{/literal}
+</script>
+<!-- 开始用户登录注册界面 -->
+<div class="midHeader">
+<div class="midHeaderBox">
+<div class="jxwLogo">
+<p class="jxwIndex" style="background:url(themes/xinyu/images/logo.png) no-repeat;"><a href="index.php"></a></p>
+</div>
+<div class="orderFlow of-bg1"><span class="oStatus">1、我的购物车</span><span>2、确认订单信息</span><span>3、成功提交订单</span></div>
+</div>
+</div>
+<div class="shop-cart-wrapper">
+<table class="regist-process-body fl wfs" style="margin-top:55px;margin-bottom:30px;height:350px;">
+<tr>
+<td>
+<div style="margin-left:-50px;margin-top:-50px;margin-bottom:-50px;width:511px;height:455px"><img src="images/54618841N50a59944.png" /></div>
+</td>
+<td width="50%" valign="top" bgcolor="#ffffff">
+<form action="flow.php?step=login" method="post" name="loginForm" id="loginForm" onsubmit="return checkLoginForm(this)">
+<table width="70%" border="0" cellpadding="8" cellspacing="1" style="background:#FFF;margin-left:120px;">
+<tr height="15px">             
+</tr>
+<tr>             
+<td><div class="item"><span>{$lang.username}/邮箱/用户名</span></div></td>
+</tr>
+<tr height="45">             
+<td><input name="username" type="text" class="text"  id="username" placeholder="请输入用户名/邮箱" style="background:url(images/loginflow1.png) no-repeat ;background-position:left center;"/>
+</td>
+</tr>
+<tr height="5px">             
+</tr>
+<tr>
+<td><div class="item"><span>{$lang.password}</span></div></td>
+</tr>
+<tr height="35px">
+<td bgcolor="#ffffff"><input name="password" class="text"  type="password" placeholder="请输入密码"  style="background:url(images/loginflow.png) no-repeat ;background-position:left center;"/></td>
+</tr>
+<!-- 判断是否启用验证码{if $enabled_login_captcha} -->
+<tr>
+<td bgcolor="#ffffff"><div align="right"><strong>{$lang.comment_captcha}:</strong></div></td>
+<td bgcolor="#ffffff"><input type="text" size="8" name="captcha"  />
+<img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </td>
+</tr>
+<!--{/if}-->
+<tr height="50px">
+</tr>
+<tr>
+<td><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember"><div class="qbcdl"><span>&nbsp;{$lang.remember}</span></div></label></td>
+</tr>
+<tr height="30px">
+<td>
+<a href="user.php?act=get_password" class="f6">{$lang.get_password_by_mail}</a>
+<td>
+</tr>
+<tr height="80px">
+<td colspan="2">
+<div class="item login-btn2013">
+<input type="submit"  name="login" value="{$lang.forthwith_login}" class="denglu"/>
+<!-- {if $anonymous_buy eq 1} 是否允许未登录用户购物 -->
+<input type="button" class="denglu" value="{$lang.direct_shopping}" onclick="location.href='flow.php?step=consignee&amp;direct_shopping=1'" />
+<!-- {/if} -->
+<input name="act" type="hidden" value="signin" />
+</div>
+</td>
+</tr>
+</table>
+</form>
+<div class="free-regist">
+<span><a href="user.php?act=register">免费注册</a></span>
+</div>
+</td>
+</tr>
+{if $need_rechoose_gift}
+<tr>
+<td colspan="2" align="center" style="border-top:1px #ccc solid; padding:5px; color:red;">{$lang.gift_remainder}</td>
+</tr>
+{/if}
+</table>
+</div>
+<!-- 结束用户登录注册界面 -->
+<!-- {/if} -->

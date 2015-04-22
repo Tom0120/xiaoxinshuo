@@ -1,0 +1,43 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $top_goods}
+<!--排行榜begin-->
+<div class="board">
+<h3>销量排行榜</h3>
+<div class="list">
+<ul>
+<!-- {foreach name=top_goods from=$top_goods item=goods}-->
+<!-- {if $smarty.foreach.top_goods.iteration<4}-->
+<li class=" on first clearfix">
+<span {if $smarty.foreach.top_goods.iteration<4} class=" num top3" {/if}>{$smarty.foreach.goods.iteration}</span>
+<div class="listBig" style="display:block;">
+<a class="img" href="{$goods.url}" title="{$goods.name|escape:html}" target="_blank"><img src="http://img07.jximage.com/2013/1002/9a4670f3f2eb44dabb1c11929c4f7cff4.jpg" alt="{$goods.name|escape:html}"/></a>
+<div class="info">
+<a class="name" title="{$goods.name|escape:html}" href="{$goods.url}" target="_blank">{$goods.short_name}</a>
+<p class="price" id="pop_3">
+{$goods.price}
+</p>
+</div>
+</div>
+<span class="name_s" style="display:none;">{$goods.short_name}</span>
+</li>
+<!-- {/if} -->	
+<!-- {if $smarty.foreach.top_goods.iteration>4}-->
+<li><span class="num ">{$smarty.foreach.goods.iteration}</span>
+<div class="listBig" style="display:none;">
+<a class="img" href="{$goods.url}" title="{$goods.name|escape:html}" target="_blank"><img src="{$goods.thumb}" alt=""/></a>
+<div class="info">
+<a class="name" title="{$goods.name|escape:html}" href="{$goods.url}" target="_blank">{$goods.short_name}</a>
+<p class="price" id="pop_4867">
+{$goods.price}
+</p>
+</div>
+</div>
+<span class="name_s">{$goods.short_name}</span>
+</li>
+<!-- {/if} -->	
+<!-- {/foreach} -->
+</ul>
+</div>
+</div>
+<!--排行榜end-->
+<!-- {/if} -->

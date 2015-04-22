@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>{if $all_cat}分类列表{else}{$cat_name}{/if} - {$shop_name}</title>
+<link rel="shortcut icon" href="http://www.xiaoxinshuo.com/favicon.ico" />
+<link rel="icon" href="http://www.xiaoxinshuo.com/animated_favicon.gif" type="image/gif" />
+{include file='page_header.html'}
+</head>
+<body><header id="header">
+<div class="header_l header_return"> <a class="ico_10" href="index.php"> 返回 </a> </div>
+<h1> 所有分类页 </h1>
+<div class="header_r header_search"> <a class="ico_03"  onClick="showSearch()"> 搜索 </a> </div>
+<div id="search_box">
+<div class="search_box">
+<form name="searchForm" method="get" action="search.php" id="searchForm">
+<input placeholder="请输入商品名称" name="keywords" type="text" id="keywordBox" />
+<button class="ico_07" type="submit" onclick="return check('keywordBox')"> </button>
+</form>
+</div>
+<a class="ico_08" onClick="closeSearch()"></a> </div>
+</header>
+<div class="clist">
+<ul>
+{if $all_cat}
+
+	{foreach from=$cat_array item=cat_data}
+<div class="mc radius">
+	<h3><a href='category.php?c_id={$cat_data.id}'>{$cat_data.name}</a></h3>
+	{foreach from=$cat_data['cat_id'] item=ccat_data} <a href='category.php?c_id={$ccat_data.id}' style="display: inline-table;width: 30%;padding: 10px 0;text-align: center;color: #546280;font-size: .75em;">{$ccat_data.name}</a> {/foreach} </div>
+{/foreach}
+
+{else}
+{if $cat_children}
+<div style="margin-top: 8px;padding: 10px;background-color: #f2ebe3;border-top: 1px solid #ddd2c0;border-bottom: 1px solid #ddd2c0;box-shadow: inset 0 1px 0 #fff;"> <span class="red">{foreach from=$cat_children item=child_data} <a href='category.php?c_id={$child_data.id}' style="display: inline-table;width: 30%;padding: 6px 0;text-align: center;color: #546280;font-size: .75em;">{$child_data.name}</a> {/foreach}</span></div>
+{/if}
+<div class="mc radius">
+	<ul class="mu-l2w">
+		{foreach from=$goods_data item=goods name=goodsit}
+		<li style="padding: 10px;border-top: none;overflow: hidden;{if $smarty.foreach.goodsit.iteration neq 1}border-top: 1px solid #DED6C9;{/if}line-height: 1.6em;"> <a href="goods.php?id={$goods.id}" style="display: block;overflow: hidden;lear: both;padding: .22em 0;"> <span class="mu-tmb" style="float:left;margin-right:8px;">{if $goods.i <= 3}<b style="position:absolute;padding:2px 2px 2px 2px;font-size:.65em;background:red;color:white;">HOT</b>{/if}<img src="/{$goods.thumb}" alt="{$goods.name}" width="100" height="100"> </span> <span>{$goods.name}</span><span class="red" style="display: block;">{$goods.price}</span></a> </li>
+		{foreachelse}
+		暂无此类商品
+		{/foreach}
+	</ul>
+</div>
+{if $pagebar}
+{$pagebar}
+{/if}
+{/if}
+</ul>
+</div>
+<script type="text/javascript" src="js/zepto.min.js"></script> 
+<script type="text/javascript">
+/*头部搜索点击关闭或者弹出搜索框*/  
+function showSearch( ){
+document.getElementById("search_box").style.display="block";
+}
+function closeSearch(){
+document.getElementById("search_box").style.display="none";
+}
+/* 搜索验证 */
+function check(Id){
+var strings = document.getElementById(Id).value;
+if(strings.replace(/(^\s*)|(\s*$)/g, "").length == 0){
+return false;
+}
+return true;
+}
+(function($) {
+var btn_up = new Image(), btn_down = new Image();
+btn_up.src = "images/ico_12.png";
+btn_down.src = "images/ico_11.png";
+var Menu = {
+// 初始化事件
+initEvent : function() {
+$().ready(
+function() {
+$("div.clist").click(function(e) {
+Menu.router(e);
+});
+$("#allClass").click(function(e) {
+Menu.showMenu1();
+});
+$(window).on(
+"hashchange",
+function(e) {
+var name = decodeURIComponent(location.hash
+.replace(/^#/, ""));
+if (name != "") {
+Menu.showMenu3(name);
+}else{
+Menu.showMenu1();
+}
+});
+});
+},
+// 事件分发路油
+router : function(_event) {
+var target = $(_event.target || _event.srcElement);
+var _tar = target.closest(".level1");
+// 显示二级菜单
+if (_tar.length > 0) {
+Menu.showMenu2(_tar);
+/*var _gp = target.closest(".crow_row");// 点击事件对应此行的祖父级节点
+var _top = _gp.offset().top;
+setTimeout(function(){
+if (_top > 100) {
+window.scroll(0, _gp.offset().top);
+} else {
+window.scroll(0, _gp.offset().top - 50);
+}					
+},15)*/
+return;
+}
+},
+// 显示一级菜单
+showMenu1 : function() {
+$("#contentsub").hide();
+$("#content").show();
+},
+// 显示二级菜单
+showMenu2 : function($curMenuDom) {
+var next = $curMenuDom.next("ul");
+if (next.css("display") == "none") {
+//$("ul.clist_sub").hide();
+//$("div.crow_arrow").each(function(i, dom) {
+//	$(dom).html(btn_down.cloneNode(true));
+//});
+next.css("opacity", "0").show().animate({
+opacity : 1
+}, 500);
+//next.show();
+$("div.crow_arrow", $curMenuDom).html(btn_up.cloneNode(true));
+} else {
+next.hide();
+$("div.crow_arrow", $curMenuDom).html(btn_down.cloneNode(true));
+}
+},
+
+}
+window.Menu = Menu;
+Menu.initEvent();// 初始化事件
+})($);
+</script>
+{include file='page_footer.html'}
+
+</body>
+</html>

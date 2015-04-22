@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="sidebar fl">
+<!--{foreach from=$banner22 item=banner22}-->
+<a title="{$banner22.title}" href="{$banner22.ad_link}" target="_blank" >
+<img src="{$banner22.ad_code}" alt="{$banner22.title}" width="220" height="142">
+</a> 
+<!--{/foreach}-->
+<script type="text/javascript" src="themes/xinyu/js/common-top.js"></script> 
+<div style="display: none;" id="rocket-to-top">
+<div style="opacity:0;display: block;" class="level-2"></div>
+<div class="level-3"></div>
+</div>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+</div>
+</div>
+
+

@@ -1,0 +1,34 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $related_goods} -->
+<form name="m_goods_1" method="post" action="" onSubmit="return false;" class="clearfix">
+<div class="package fl wfs">
+<h4 class="fl wfs">套餐搭配</h4>
+<img class="thumb fl" src="{$goods.goods_img}" title="{$goods.goods_name}" alt="{$goods.goods_name}">
+<input class="m_goods_body m_goods_1" item="m_goods_1" type="checkbox" style="display:none;" value="537" data="5000.00" spare="0" stock="0" />
+<div class="canvas fl">
+<span class="package-btn j-package-btn package-btn-left"></span>
+<span class="package-btn j-package-btn package-btn-right"></span>
+<div class="package-container fl">
+<ul class="package-container-items j-package-container-items">
+<!--{foreach from=$related_goods item=releated_goods_data}-->
+<li class="width-item j-width-item">
+<a href="{$releated_goods_data.url}" alt="{$releated_goods_data.goods_name}" target="_blank">
+<img src="{$releated_goods_data.goods_thumb}" title="APP商创版手机端+服务包(ecshop原生APP，自主开发)" alt="APP商创版手机端+服务包(ecshop原生APP，自主开发)">
+</a>
+<span style="text-align: center;" title="{$releated_goods_data.goods_name}" alt="{$releated_goods_data.goods_name}">{$releated_goods_data.short_name}<br>
+<i>&nbsp; 
+<!-- {if $releated_goods_data.promote_price neq 0} -->
+{$releated_goods_data.formated_promote_price}
+<!-- {else} -->
+{$lang.shop_price}{$releated_goods_data.shop_price}
+<!-- {/if} --></i>&nbsp;&nbsp;
+</span>
+<input class="j-package-opt m_goods_list m_goods_1" item="m_goods_1" type="checkbox" value="314" data="4499" spare="500" stock="0">
+</li>
+  <!--{/foreach}-->
+</ul>
+</div>
+</div>
+</div>
+</form>
+<!-- {/if} -->

@@ -1,0 +1,93 @@
+<div class="layout style0 yxl" style="margin-top:20px;float:left;">
+    <div class="hd">
+    	<div class="menu-header">
+    	{if $goods_cat.name eq '饮食营养'}
+    		<i class="menu-ico ico-eat-c"></i>
+    	{/if}
+    	{if $goods_cat.name eq '按摩理疗'}
+    		<i class="menu-ico ico-massage-c"></i>
+		{/if}
+		{if $goods_cat.name eq '健康检测'}
+    		<i class="menu-ico ico-test-c"></i>
+		{/if}
+		{if $goods_cat.name eq '康复护理'}
+    		<i class="menu-ico ico-resure-c"></i>
+		{/if}
+		{if $goods_cat.name eq '电子电器'}
+    		<i class="menu-ico ico-ele-c"></i>
+		{/if}
+		{if $goods_cat.name eq '日常用品'}
+    		<i class="menu-ico ico-common-c"></i>
+		{/if}
+		{if $goods_cat.name eq '孝心礼品'}
+    		<i class="menu-ico ico-gift-c"></i>
+		{/if}
+    	</div>
+
+        <div class="changeBnt">
+        {if $goods_cat.name eq '饮食营养'}
+        <!--{foreach from=$thiscid76 item=cat}-->
+        <a href="{$cat.url}" class="changeBnt1" id="xxlChg">{$cat.name}</a>
+        <!--{/foreach}-->
+        {/if}
+        {if $goods_cat.name eq '按摩理疗'}
+        <!--{foreach from=$thiscid2 item=cat}-->
+        <a href="{$cat.url}" class="changeBnt1" id="xxlChg">{$cat.name}</a>
+        <!--{/foreach}-->
+        {/if}
+        {if $goods_cat.name eq '健康检测'}
+        <!--{foreach from=$thiscid111 item=cat}-->
+        <a href="{$cat.url}" class="changeBnt1" id="xxlChg">{$cat.name}</a>
+        <!--{/foreach}-->
+        {/if}
+        {if $goods_cat.name eq '康复护理'}
+        <!--{foreach from=$thiscid124 item=cat}-->
+        <a href="{$cat.url}" class="changeBnt1" id="xxlChg">{$cat.name}</a>
+        <!--{/foreach}-->
+        {/if}
+        {if $goods_cat.name eq '电子电器'}
+        <!--{foreach from=$thiscid135 item=cat}-->
+        <a href="{$cat.url}" class="changeBnt1" id="xxlChg">{$cat.name}</a>
+        <!--{/foreach}-->
+        {/if}
+        {if $goods_cat.name eq '日常用品'}
+        <!--{foreach from=$thiscid136 item=cat}-->
+        <a href="{$cat.url}" class="changeBnt1" id="xxlChg">{$cat.name}</a>
+        <!--{/foreach}-->
+        {/if}
+        {if $goods_cat.name eq '孝心礼品'}
+        <!--{foreach from=$thiscid138 item=cat}-->
+        <a href="{$cat.url}" class="changeBnt1" id="xxlChg">{$cat.name}</a>
+        <!--{/foreach}-->
+        {/if}
+        </div>
+    </div>
+
+    <div class="boutique2 fl wfs" style="margin-top:20px;float:left;">
+        <div class="canvas">
+        <ul class="items">
+            <!--{foreach from=$cat_goods item=goods}-->
+            <li class="items-li j-items-li">
+            <a href="{$goods.url}">
+            <img src="{$goods.thumb}" alt="{$goods.name|escape:html}" style="width:260px;height:180px;"/>
+            <p class="name">{$goods.name|truncate:20:"...":true}</p>
+            <p>
+            <span>
+            孝心价：
+            <!-- {if $goods.promote_price neq ""} -->
+            {$goods.promote_price}
+            <!-- {else}-->
+            {$goods.shop_price}
+            <!--{/if}-->
+            </span>
+            <!---span>{$goods.evaluation}</span--->
+
+            </p>
+            </a>
+            </li>
+            <!--{/foreach}-->
+        </ul>
+        </div>
+    </div>
+
+</div>

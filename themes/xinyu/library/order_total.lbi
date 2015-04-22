@@ -1,0 +1,41 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{insert_scripts files='transport.js,utils.js'}
+<li id="ECS_ORDERTOTAL" class="bb" style="vertical-align:top;">
+<div class="comTotalBox" style="padding:10px 0px 0px;margin:0px;text-align:right;">
+<p>
+ {$lang.goods_all_price}：{$total.goods_price_formated}
+</p>
+<!-- {if $total.discount gt 0} 折扣 -->
+<p id="yf_div">  - {$lang.discount}: <font class="f4_b">{$total.discount_formated}</font></p>
+<!-- {/if} -->
+<!-- {if $total.tax gt 0} 税 -->
+<p id="yf_div">    + {$lang.tax}: <font class="f4_b">{$total.tax_formated}</font></p>
+<!-- {/if} -->
+<!-- {if $total.shipping_fee > 0} 配送费用 -->
+<p id="yf_div">    + {$lang.shipping_fee}: <font class="f4_b">{$total.shipping_fee_formated}</font></p>
+<!-- {/if} -->
+<!-- {if $total.shipping_insure > 0} 保价费用 -->
+<p id="yf_div">    + {$lang.insure_fee}: <font class="f4_b">{$total.shipping_insure_formated}</font></p>
+<!-- {/if} -->
+<!-- {if $total.pay_fee > 0} 支付费用 -->
+<p id="yf_div">    + {$lang.pay_fee}: <font class="f4_b">{$total.pay_fee_formated}</font></p>
+<!-- {/if} -->
+<!-- {if $total.pack_fee > 0} 包装费用-->
+<p id="yf_div">    + {$lang.pack_fee}: <font class="f4_b">{$total.pack_fee_formated}</font></p>
+<!-- {/if} -->
+<!-- {if $total.card_fee > 0} 贺卡费用-->
+<p id="yf_div">    + {$lang.card_fee}: <font class="f4_b">{$total.card_fee_formated}</font></p>
+<!-- {/if} --> 
+<!-- {if $total.surplus > 0 or $total.integral > 0 or $total.bonus > 0} 使用余额或积分或红包 -->
+<!-- {if $total.surplus > 0} 使用余额 -->
+<p id="yf_div">- {$lang.use_surplus}: <font class="f4_b">{$total.surplus_formated}</font></p>
+<!-- {/if} -->
+<!-- {if $total.integral > 0} 使用积分 -->
+<p id="yf_div">- {$lang.use_integral}: <font class="f4_b">{$total.integral_formated}</font></p>
+<!-- {/if} -->
+<!-- {if $total.bonus > 0} 使用红包 -->
+<p id="yf_div">- {$lang.use_bonus}: <font class="f4_b">{$total.bonus_formated}</font></p>
+<!-- {/if} -->  
+<!-- {/if} 使用余额或积分或红包 -->
+</div>
+</li>

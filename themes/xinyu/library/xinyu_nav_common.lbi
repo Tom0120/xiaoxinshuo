@@ -1,0 +1,18 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="themes/xinyu/js/newnav.js"></script>
+<script src="themes/xinyu/js/nav.js"></script>
+<div style="height:40px;" class="fl wfs">
+<div class="Nnav">
+<div class="cover-page-wrapper cover-page-wrapper2 clearfix">
+{include file="/library/category_tree.lbi"}
+<ul>
+<li class="current"><a href="index.php">首页</a></li>
+<!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav name="xinyuindex"} -->
+{if $smarty.foreach.xinyuindex.iteration<9}
+<li ><a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}<span></span></a> </li>           
+{/if}
+<!-- {/foreach} -->
+</ul>
+</div>
+</div>
+</div>

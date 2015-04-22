@@ -1,0 +1,47 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="cover-page-index-slide j-index-slide fl wfs">
+<div class="border">
+<div class="center">
+<div class="relative">
+<div class="location">
+<div id="wrap" class="wrap">
+<div class="slide" id="slide">
+<ul class="slide_ul">
+{foreach from=$ad_diy item=diyAd}
+<li><a href="{$diyAd.imglink}"><img src="{$diyAd.imgcode}" alt="{$diyAd.title|escape:html}"></a></li>
+{/foreach}
+</ul>
+</div>
+</div>
+</div>
+<a href="javascript:void(0);" class="show_pre j-slide-btn">左边</a>
+<a href="javascript:void(0);" class="show_next j-slide-btn">右边</a>
+</div>
+</div>
+</div>
+<div class="icons fl wfs" >
+<ul id="tips">
+<li><span></span></li>
+<li><span></span></li>
+<li><span></span></li>
+<li><span></span></li>
+<li><span></span></li>
+<li><span></span></li>
+</ul>
+</div>
+<script src="themes/xinyu/js/jquery.SuperSlide.js"></script>
+<script>
+$(function(){
+$(".j-index-slide").slide({
+mainCell:"#slide .slide_ul",
+effect:"leftLoop",
+prevCell:".show_pre",
+nextCell:".show_next",
+titCell:"#tips li",
+titOnClassName:"cur",
+interTime:"5000",
+autoPlay:true
+});
+});
+</script>
+</div>

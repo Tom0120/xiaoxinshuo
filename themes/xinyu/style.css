@@ -1,0 +1,33 @@
+/*
+Template Name: 孝心说
+Template URI: http://www.xiaoxinshuo.com/
+Description: 更多信息请访问<a href="http://www.xiaoxinshuo.com/" target="_blank" style="color:#f60;font-size:12px;font-weight:normal;">馨予ECSHOP</a>了解</br>注：请勿用系统自带备份功能来备份系统，推荐使用phpMyAdmin工具导出备份！本系统只能使用馨予版ECSHOP模板
+Version: 6.1.6
+Author: xiaoxinshuo@163.com
+Author URI: http://www.xiaoxinshuo.com/
+Logo filename: logo.gif
+Template Type: type_0
+*/
+
+/*购物车*/
+#okcart{right: 0;top:-9px;}
+.mini_cart{width:165px;height:44px;line-height:44px;background: url(images/elem.png) 0 -120px no-repeat;padding-left: 40px;color: #fff;font-size: 14px;}
+.cart{height:44px;}
+.cart a{color:#FFF; text-decoration:none;}
+.cart a:hover{color:#00915e; text-decoration:underline;}
+
+.cart_info_div {background:#FFF;font-size:12px;width:270px;height:100px;overflow:hidden; margin-left:3px;border-bottom:#ddd 1px dotted;}
+.cart_info_div .img_l {float:left;display:block;border:1px solid #e4e4e4;margin:5px;width:82px;height:82px;}
+.cart_info_div .f_right {width:160px;float:left;}
+.cart_info_div .f_right span.names {width:150px;height:30px;line-height:30px;overflow:hidden;}
+.cart_info_div .f_right span.names a {text-align:left;color:#c0c0c0;}
+.cart_info_div .f_right span a {color:#000;font-size:12px;height:30px;line-height:30px}
+.cart_info_div .f_right span.cheng {color:#c0c0c0;}
+.cart_info_div .f_right span font {color:#c0c0c0;font-size:12px}
+.cart_info_div .f_right span {line-height:20px;height:16px;overflow:hidden;text-align:left;}
+
+
+#cartbox{display:none;width:280px;background:#e0e4e5;border:1px solid #00915e;border-top:none;margin-top:26px;z-index:9999;position: absolute;left:962px;}
+
+
+

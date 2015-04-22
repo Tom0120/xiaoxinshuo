@@ -1,0 +1,38 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="cover-page-index-slide j-index-slide fl wfs" style="height:350px;">
+<div class="border">
+<div class="center">
+<div class="relative">
+<div class="location">
+<div id="wrap" class="wrap">
+<div class="slide" id="slide">
+<ul class="slide_ul">
+{foreach from=$banner20 item=banner20}
+<li><a href="{$banner20.ad_link}"><img src="{$banner20.ad_code}" alt="{$banner20.title|escape:html}"></a></li>
+{/foreach}
+</ul>
+</div>
+</div>
+</div>
+<a href="javascript:void(0);" class="show_pre j-slide-btn">左边</a>
+<a href="javascript:void(0);" class="show_next j-slide-btn">右边</a>
+</div>
+</div>
+</div>
+
+<script src="themes/xinyu/js/jquery.SuperSlide.js"></script>
+<script>
+$(function(){
+$(".j-index-slide").slide({
+mainCell:"#slide .slide_ul",
+effect:"leftLoop",
+prevCell:".show_pre",
+nextCell:".show_next",
+titCell:"#tips li",
+titOnClassName:"cur",
+interTime:"5000",
+autoPlay:true
+});
+});
+</script>
+</div>

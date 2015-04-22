@@ -1,0 +1,144 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
+<div class="right fl">
+<div class="discount-msg">
+<h3>{$goods.goods_name}</h3>
+<h4>{$goods.goods_brief}</h4>
+</div>
+<div class="discount-msg-two">
+<p class="price">
+<!-- {if $goods.promote_price eq ""} -->
+<span>{$lang.shop_price}</span>{$goods.promote_price}
+<!-- {else}-->
+<span>{$lang.shop_price}</span>{$goods.shop_price}
+<!--{/if}-->
+</p>
+<p class="end-time">
+<!--{if $goods.is_promote and $goods.gmt_end_time } 促销-->
+<i class="time-pic"></i>
+<font id="left_time_msg">{$lang.residual_time}</font>
+<font id="leftTime">{$lang.please_waiting}</font>
+{insert_scripts files='lefttime.js'}
+{/if}
+</p>
+<p class="youhui">
+<!-- {if $promotion} -->  
+<span>{$lang.activity}</span>
+<!-- {foreach from=$promotion item=item key=key} 优惠活动-->
+<!-- {if $item.type eq "snatch"} -->
+<a href="snatch.php" title="{$lang.snatch}"><span class="phrase1s">{$lang.snatch}</span></a>
+<!-- {elseif $item.type eq "group_buy"} -->
+<a href="group_buy.php" title="{$lang.group_buy}"><span class="phrase1">{$lang.group_buy}</span></a>
+<!-- {elseif $item.type eq "auction"} -->
+<a href="auction.php" title="{$lang.auction}"><span class="phrase1">{$lang.auction}</span></a>
+<!-- {elseif $item.type eq "favourable"} -->
+<a href="activity.php" title="{$lang.favourable}"><span class="phrase1">{$lang.favourable}</span></a>
+<!-- {/if} -->
+<a href="{$item.url}" title="{$lang.$item.type} {$item.act_name}{$item.time}"><span>{$item.act_name}</span></a>
+<!-- {/foreach} -->
+<!-- {/if} -->
+</p>
+</div>  
+<div class="center_add">
+<span>{$lang.number}</span>
+<div class="center_add_left"> <a onclick="buyNumber.minus()" href="javascript:;"><img src="images/jian.gif" ></a>
+<input name="number" type="text" value="1" defaultnumber="1" onblur="changePrice()" id="product_num">
+<a onclick="buyNumber.plus()" href="javascript:;"><img src="images/jia.gif" /></a></div>
+<p><!-- {if $goods.goods_number neq "" and $cfg.show_goodsnumber} 商品库存--> 
+<!-- {if $goods.goods_number eq 0} --> 
+{$lang.goods_number}
+{$lang.stock_up} 
+<!-- {else} --> 
+{$lang.goods_number}
+{$goods.goods_number} {$goods.measure_unit} 
+<!-- {/if} --> 
+<!-- {/if} --></p>
+</div>
+<script>
+var buyNumber = {
+maxNumber : 100,
+minNumber : 1,
+defaultNumber : function(){
+var defaultnumber = $('#product_num').attr('defaultnumber');
+defaultnumber = parseInt(defaultnumber)
+if(defaultnumber < 1){
+defaultnumber = 1;
+}
+return defaultnumber;
+},
+goodNumber : function(num){
+if(typeof(num) == 'number'){
+return $('#product_num').val(num);
+}else{
+return parseInt($('#product_num').val());
+}
+},
+plus : function(){
+var num = buyNumber.goodNumber() + buyNumber.defaultNumber();
+if(num <= buyNumber.maxNumber){
+buyNumber.goodNumber(num);
+}
+},
+minus : function(){
+var num = buyNumber.goodNumber() - buyNumber.defaultNumber();
+if(num >= buyNumber.minNumber){
+buyNumber.goodNumber(num);
+}
+}
+}
+</script>
+<!-- {* 开始循环所有可选属性 *} -->
+<!-- {foreach from=$specification item=spec key=spec_key} -->
+<p class="attri">
+<!-- {* 判断属性是复选还是单选 *} -->
+<!-- {if $spec.attr_type eq 1} -->
+<!-- {if $cfg.goodsattr_style eq 1} -->
+<i>{$spec.name}:</i>
+<!-- {foreach from=$spec.values item=value key=key name=spec} -->
+{if $smarty.foreach.spec.iteration < 2}
+<span style="color:#000; text-decoration:none" class="now"  onclick="changeAtt(this)" name="spec_{$spec_key}" title="加{$value.format_price|abs}">
+<label for="spec_value_{$value.id}">
+<input style="display:none" type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" {if $key eq 0}checked{/if} onclick="changePrice()"/>
+{$value.label}
+</label>
+</span>
+{/if}
+{if $smarty.foreach.spec.iteration > 1}
+<span style="color:#000; text-decoration:none"  onclick="changeAtt(this)" name="spec_{$spec_key}" title="加{$value.format_price|abs}">
+<label for="spec_value_{$value.id}">
+<input style="display:none" type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" {if $key eq 0}checked{/if} onclick="changePrice()"/>
+{$value.label}
+</label>
+</span>
+{/if}
+<!-- {/foreach} -->
+<input type="hidden" name="spec_list" value="{$key}" />
+<!-- {else} -->
+<select name="spec_{$spec_key}" onchange="changePrice()">
+<!-- {foreach from=$spec.values item=value key=key} -->
+<option label="{$value.label}" value="{$value.id}">{$value.label} {if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if}{if $value.price neq 0}{$value.format_price}{/if}</option>
+<!-- {/foreach} -->
+</select>
+<input type="hidden" name="spec_list" value="{$key}" />
+<!-- {/if} -->
+<!-- {else} -->
+<!-- {foreach from=$spec.values item=value key=key} -->
+<label for="spec_value_{$value.id}">
+<input type="checkbox" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" onclick="changePrice()" />
+{$value.label}  </label>
+<!-- {/foreach} -->
+<input type="hidden" name="spec_list" value="{$key}" />
+<!-- {/if} -->
+</p>
+<!-- {/foreach} -->
+<!-- {* 结束循环所有可选属性 *} -->
+<p class="make fl wfs" id="gwc">
+<!-- {if $goods.goods_number eq 0} -->
+<a class="make-cart fl" id="down_now" target="_blank" href="javascript:addToCart({$goods.goods_id})">立即预定</a>
+<!-- {else} -->
+<a class="make-cart fl" href="javascript:addToCart({$goods.goods_id})">立即购买</a>
+<!-- {/if} -->
+<a class="make-show fl" href="javascript:collect({$goods.goods_id})" target="_blank"><i></i>加入收藏</a>
+</p>
+</div>
+</form>

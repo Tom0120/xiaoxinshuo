@@ -1,0 +1,312 @@
+{* TitlePicWidth: 1920 *}
+{* TitlePicHeight: 420 *}
+
+{* 说明：$title_pic，分类标题图片地址； *}
+{* 说明：$base_style，基本风格样式颜色； *}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$topic.title}_{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link type="text/css" rel="stylesheet" href="themes/xinyu/css/anli.css" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+</head>
+<body>
+<div class="slide_nav">
+<div class="slide_nav2">
+<ul>
+<li class="backtotop"></li>
+<li class="pc maodian"></li>
+<li class="mobile maodian"></li>
+<li class="contact"><a href="tencent://message/?uin=2963261932&amp;Site=馨予建站团队--信誉与服务，一体化&amp;Menu=yes" target="_blank"></a></li>
+</ul>
+</div>
+</div>
+<div class="head_bg"><a name="top"></a>
+<div class="head_cont">
+<h1 class="logo">
+<a href="http://www.xiaoxinshuo.com/" target="_blank"><img src="themes/xinyu/images/logo.png" style="width:208; height:35px;margin-top:25px;" /></a>
+</h1>
+<ul class="head_nav">
+<li><a href="http://www.xiaoxinshuo.com"  target="_blank">首页</a></li>
+<li><a href="http://www.xiaoxinshuo.com/category.php?id=2" target="_blank">商业模板</a></li>
+<li><a href="http://www.xiaoxinshuo.com/category.php?id=10" target="_blank">免费资源</a></li>
+<li><a href="http://www.xiaoxinshuo.com/category.php?id=9" target="_blank">插件中心</a></li>
+<li><a href="http://www.xiaoxinshuo.com/topic.php?topic_id=3" target="_blank">手机端</a></li>
+<li><a href="http://www.xiaoxinshuo.com/topic.php?topic_id=2" target="_blank">大京东</a></li>
+<li><a href="http://www.xiaoxinshuo.com/topic.php?topic_id=1" target="_blank" class="navset">客户案例</a></li>
+</ul>
+<div class="head_tel">
+18634631891
+</div>
+</div>
+</div> 
+<div class="banner">
+<div class="banner_1">
+<div class="bg"><img src="images/banner_bg.png" />
+<div class="ecmoban"><img src="images/logo1_03.png" /></div>
+<div class="anli">
+<div class="anli_wrap">
+<div class="anli_wrap2"><img src="images/logo1_05.png" /></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="main">
+<div class="main_1">
+<a name="pc"></a>
+<h1>WEB端案例</h1>
+<div class="animation">
+<ul class="clearfix">
+<li><img src="http://www.ecmoban.com/topic/anli/images/zcool.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>站酷网</dt>
+<dd>中国最具人气的设计师互<br />动平台</dd>
+<dd>国内最活跃的原创设计交<br />流平台</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/study.jpg" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>汉王科技</dt>
+<dd>全球文字识别与智能交互<br />产品引领者</dd>
+<dd>手写汉字识别获得国家科<br />技进步一等奖</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/contrside.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>植美村</dt>
+<dd>中国最受消费者欢迎的二<br />十大品牌</dd>
+<dd>中国著名品牌之一</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/diannao.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>京乾瑞通国际化商城</dt>
+<dd>集商贸服务，高端理财等<br />业务为一体</dd>
+<dd>覆盖北京、天津、上海、<br />福建等省市</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/smell.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>上海添香</dt>
+<dd>拥有国内顶尖整合营销<br />团队</dd>
+<dd>防辐射服装行业的第一<br />品牌</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/wuxi.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>无锡康顿生物科技</dt>
+<dd>引领健康生活新风尚</dd>
+<dd>以"打造健康生活"为<br />目标</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/national.jpg" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>信淘国际</dt>
+<dd>国际电商服务领导品牌</dd>
+<dd>创始团队均来自北大、清<br />华两所高校</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/4g.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>4G猫</dt>
+<dd>国内最专业的4G网上购<br />物商城</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/taobao.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>淘聚汇</dt>
+<dd>淘宝代理第一平台</dd>
+<dd>一体化电子商务第三方<br />服务平台</dd>
+</dl>
+</a>
+</div>
+</li>
+</ul>
+</div>
+<div class="more"><a href="#" target="_blank">+更多案例</a></div>
+</div>
+
+<div class="main_1" style="margin-top:53px;">
+<a name="mobile"></a>
+<h1>移动端案例</h1>
+<div class="animation">
+<ul class="clearfix">
+<li><img src="http://www.ecmoban.com/topic/anli/images/food.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>零食够</dt>
+<dd>各类进口食品、健康零食</dd>
+<dd>全球采购，吃出健康国际范</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/convinent.jpg" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>长弓便利</dt>
+<dd>便捷生活，尽在长弓</dd>
+<dd>打造凯里市唯一的集网<br />上超市、配送为一体购<br />物网站</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/fashion.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>佰潮网</dt>
+<dd>中国第一家大学生分期购<br />物商城</dd>
+<dd>直面大学城所有大学生，<br />提供更加优质的服务</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/pet.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>百宠堂</dt>
+<dd>发展最迅速的宠物门户<br />网站</dd>
+<dd>全国最大网上宠物交易信<br />息发布平台</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/milk.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>澳优乳业</dt>
+<dd>中国高端奶粉市场五强<br />中唯一的奶源</dd>
+<dd>来自澳洲的中国品牌</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/good.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>壹千鲜</dt>
+<dd>高效，完整的生鲜消费<br />平台和配送</dd>
+<dd>电话、手机、电脑，多<br />方式下单</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/92.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>92商城</dt>
+<dd>“满足家庭所需”的一站<br />式网购</dd>
+<dd>选择92商城，选择优质生活</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/skin.jpg" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>思芙美</dt>
+<dd>专注于化妆品电子商务<br />的互联网公司</dd>
+<dd>国际美妆品牌网络零售商</dd>
+</dl>
+</a>
+</div>
+</li>
+<li><img src="http://www.ecmoban.com/topic/anli/images/aysd.png" />
+<div class="hide">
+<p></p>
+<a href="#" target="_blank">
+<dl>
+<dt>艾斯雅顿</dt>
+<dd>欧洲货源出口商</dd>
+<dd>打造国产品牌欧洲标准<br />的自然护肤品</dd>
+</dl>
+</a>
+</div>
+</li>
+</ul>
+</div>
+<div class="more"><a href="#" target="_blank">+更多案例</a></div>
+</div>
+</div>
+<!-- #BeginLibraryItem "/library/anli_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript" src="themes/xinyu/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="themes/xinyu/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="themes/xinyu/js/Animationanli.js"></script>
+<script type="text/javascript" src="themes/xinyu/js/all.js"></script>
+<script>
+function hiddensp(){
+     var  div  =  document.getElementById("sp_div"); 
+	div.parentNode.removeChild(div); 
+}
+</script>
+<script type="text/javascript" src="http://www.dashenghl.com/shiyong/bsxy/bsxy.js"></script>
+</html>

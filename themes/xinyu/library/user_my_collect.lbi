@@ -1,0 +1,61 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--*收藏商品列表页面 start-->
+<!--{if $action eq 'collection_list'} -->
+{insert_scripts files='transport.js,utils.js'}
+<div class="rightBox">
+<div class="rightTit"><h2><i></i>我的收藏</h2></div>
+<div class="rightCon">
+<ul class="mycolNav clearfix">
+<li id="all"><a href="user.php?act=collection_list">全部关注</a></li>
+<li><a class="j-item " href="user.php?act=collection_list&type5=is_promote">促销</a></li>
+<li><a class="j-item " href="user.php?act=collection_list&type1=is_on_sale">上架</a></li>
+<li><a class="j-item " href="user.php?act=collection_list&type2=is_best">精品</a></li>
+<li><a class="j-item " href="user.php?act=collection_list&type3=is_new">新品</a></li>
+<li><a href="user.php?act=collection_list&type4=is_hot">热销</a></li>
+<script type="text/javascript">
+$("#all").addClass("mctOn"); 		
+</script>
+</ul>
+<table cellpadding="0" cellspacing="0" border="0" class="mycolBox">
+<tr>
+<th class="mycT0" width="10"></th>
+<th class="mycT1" width="70"><span class="mycT2All">缩略图</span></th>
+<th class="mycT2" width="330"><span>商品</span></th>
+<th class="mycT3" width="135">收藏时间</th>
+<th class="mycT4" width="225">当前价格</th>
+<th class="mycT5" width="165">操作</th>
+</tr>
+
+<!--{foreach from=$goods_list item=goods}-->
+<tr class="first">
+<td class="mycT0"></td>
+<td  class="mycT2">
+<a target="_blank" href="{$goods.url}"><img src="{$goods.goods_img}" alt="" width="60px" height="60px"></a>
+</td>
+<td class="mycT2"><a href="{$goods.url}" class="f6">{$goods.goods_name|escape:html}</a></td>
+<td class="mycT4">1122222222</td>
+<td bgcolor="#ffffff"><!-- {if $goods.promote_price neq ""} -->
+{$lang.promote_price}<span class="goods-price">{$goods.promote_price}</span>
+<!-- {else}-->
+{$lang.shop_price}<span class="goods-price">{$goods.shop_price}</span>
+<!--{/if}-->       
+</td>
+<td mycT5>
+<!-- {if $goods.is_attention} -->
+<a href="javascript:if (confirm('{$lang.del_attention}')) location.href='user.php?act=del_attention&rec_id={$goods.rec_id}'" class="f6">{$lang.no_attention}</a>
+<!-- {else} -->
+<a href="javascript:if (confirm('{$lang.add_to_attention}')) location.href='user.php?act=add_to_attention&rec_id={$goods.rec_id}'" class="f6">{$lang.attention}</a>
+<!-- {/if} -->
+<a href="javascript:addToCart({$goods.goods_id})" class="f6">{$lang.add_to_cart}</a> <a href="javascript:if (confirm('{$lang.remove_collection_confirm}')) location.href='user.php?act=delete_collection&collection_id={$goods.rec_id}'" class="f6">{$lang.drop}</a>
+</td>
+</tr>
+<!--{/foreach} -->
+</tr>
+</table>
+</div>
+ <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+
+</div>
+</div>
+<!-- 右侧 -->
+<!-- {/if} -->

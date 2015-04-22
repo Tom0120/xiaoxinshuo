@@ -1,0 +1,18 @@
+<div id="footer_container" class="footer_white" style="padding-top:5px;background: none;border-top: none;">
+    <div class="footer_con" id="footer_copyright">
+        <p class="footer_copy_con">
+            Copyright &copy; 2015 北京孝心说信息技术有限公司 xiaoxinshuo.com 保留一切权利。客服热线：186-346-31891 <br/>
+            京公网安备 11010102001226 号 | <a href="#" target="_blank" rel="nofollow">京ICP证111033号</a> | 食品流通许可证 SP1101051110165515（1-1）
+            | <a href="http://p2.jmstatic.com/activity/2013_chuangrui.jpeg" target="_blank" rel="nofollow">营业执照</a>
+        </p>
+        <p>
+            <a href="javascript:void(0)" class="footer_copy_logo logo01" rel="nofollow"></a>
+            <a href="#" target="_blank" class="footer_copy_logo logo02" rel="nofollow"></a>
+            <a href="javascript:void(0)" class="footer_copy_logo logo03" rel="nofollow"></a>
+            <a href="javascript:void(0)" class="footer_copy_logo logo04" rel="nofollow"></a>
+            <a href="#" target="_blank" class="footer_copy_logo logo05" rel="nofollow"></a>
+        </p>
+      
+    </div>
+</div>
+

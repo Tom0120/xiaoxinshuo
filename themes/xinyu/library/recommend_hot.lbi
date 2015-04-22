@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods} -->
+<div class="hot-tj">
+<ul class="hot-list clearfix">
+<!--{foreach from=$hot_goods item=goods}-->
+<li class="item">
+<p class="pic">
+<a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">
+<img src="{$goods.thumb}" alt="{$goods.name|escape:html}" style="width:190px;height:190px;">
+</a>
+</p>
+<p class="name">
+<a target="_blank" href="{$goods.url}" target="_blank" title="{$goods.name|escape:html}" >
+{$goods.name|escape:html}
+</a>
+</p>
+<p class="price">
+<span>
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}-->  
+</span>
+</p>
+<p class="btn">
+<a target="_blank" href="{$goods.url}" class="buy">立即抢购</a>
+</p>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+<!-- {/if} -->

@@ -1,0 +1,103 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="layout style0 yxl">
+<div class="hd">
+<div class="mt-tag-elem">天天精选</div>            
+<span>我们天天为你精心准备</span>
+<b class="border"></b>
+</div>
+</div>
+<div class="boutique3" >
+<div class="bd">
+<ul class="picLB" id="picLBxxl">
+<!-- {if $best_goods} -->
+<!--{foreach from=$best_goods item=goods}-->
+
+<li class="items-li j-items-li">
+<a href="{$goods.url}">
+<img src="{$goods.goods_img}" alt="" style="width:337px;height:223px;"/>
+<h3 class="name">{$goods.name|truncate:29:"...":true}</h3>
+<p>
+<i class="like"></i><span>{$goods.count}</span>
+<i class="commont"></i><span>{$goods.evaluation}</span>
+<!---i class="shouchang"></i><span>1200</span--->
+</p>
+</a>
+</li>
+<!--{/foreach}-->
+{/if}
+</ul>
+</div>
+</div>
+<script type="text/javascript">
+//换一换
+var getyxl = jQuery('#picLBxxl li').eq(0).width();
+(function($){
+var arartta= window['arartta'] = function(o){
+return new das(o);
+}
+das = function(o){
+this.obj = $('#'+o.obj);
+this.bnt = $('#'+o.bnt);
+this.showLi = this.obj.find('li');
+this.current = 0;
+this.myTimersc = '';
+this.init()
+}
+das.prototype = {
+chgPic:function(n){
+var _this = this;
+for (var i = 0,l= _this.showLi.length; i < l; i++) {
+_this.showLi.eq(i).find(".pic").find('img').eq(n).attr('src',_this.showLi.eq(i).find(".pic").find('img').eq(n).attr('nsrc'));
+
+$('#picLBxxl dl:not(:animated)').animate({left: -(n * getyxl) + "px"}, {easing:"easeInOutExpo"}, 1500, function(){});
+}
+},
+rotate:function(){
+var _this = this;
+clearInterval(_this.myTimersc);
+_this.bnt.children().css({
+'-webkit-transform':'rotate(0deg)',
+'-moz-transform':'rotate(0deg)'
+});
+var tt = 0;
+var getBnts = _this.bnt.children();
+_this.myTimersc = setInterval(function(){
+tt += 10;
+if (tt >= 180) {
+clearInterval(_this.myTimersc);
+}
+rotateElement(getBnts,tt);
+},25)
+},
+init:function(){
+var _this = this;
+this.bnt.bind("click",function(){
+_this.current++;
+if (_this.current > 2) {
+_this.current = 0 ;
+}
+_this.chgPic(_this.current);
+_this.rotate();
+
+})
+this.bnt.mouseenter(function () {
+_this.rotate();
+});
+
+}
+}
+})(jQuery)
+
+arartta({
+bnt:'xxlChg',
+obj:'picLBxxl'
+});
+
+function rotateElement(element,angle){
+var rotate = 'rotate('+angle+'deg)';
+if(element.css('MozTransform')!=undefined)
+element.css('MozTransform',rotate);
+else if(element.css('WebkitTransform')!=undefined)
+element.css('WebkitTransform',rotate);
+}
+</script>

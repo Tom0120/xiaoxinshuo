@@ -1,0 +1,25 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--热卖推荐begin-->
+<div class="hot">
+<h3>热卖推荐</h3>
+<div class="list">
+<ul id="hot">
+<!--{foreach from=$hot_goods item=goods}-->
+<li><a class="img" href="{$goods.url}" title="{$goods.name|escape:html}" target="_blank"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}"/></a>
+<p class="price" id="recommend_13">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}--> 
+</p>
+<a class="name" href="#" title="{$goods.name|escape:html}" target="_blank">{$goods.name|escape:html}</a>
+<p class="sppl">
+喜欢<a href="{$goods.url}#answerArea" title="{$goods.name|escape:html}" target="_blank">1048条</a>
+</p>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+<!--热卖推荐end-->

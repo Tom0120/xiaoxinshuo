@@ -1,0 +1,41 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $step eq "consignee"} -->
+<div class="midHeader">
+<div class="midHeaderBox">
+<div class="jxwLogo">
+<p class="jxwIndex" style="background:url(themes/xinyu/images/logo.png) no-repeat;"><a href="index.php"></a></p>
+</div>
+<div class="orderFlow of-bg1"><span class="oStatus">1、我的购物车</span><span>2、确认订单信息</span><span>3、成功提交订单</span></div>
+</div>
+</div>
+<div class="cartWrap">
+<div class="cartMain" style="width:950px;">
+<link href="http://misc.jiuxian.com/css/order/order.css?20150305" type="text/css" rel="stylesheet" />
+<!-- 开始收货人信息填写界面 -->
+{insert_scripts files='region.js,utils.js'}
+<script type="text/javascript">
+region.isAdmin = false;
+{foreach from=$lang.flow_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+
+{literal}
+onload = function() {
+if (!document.all)
+{
+document.forms['theForm'].reset();
+}
+}
+{/literal}
+</script>
+<!-- 如果有收货地址，循环显示用户的收获地址 -->
+<!-- {foreach from=$consignee_list item=consignee key=sn name=consignee} -->
+{if $smarty.foreach.consignee.iteration lt 2 }
+<form action="flow.php" method="post" name="theForm" id="theForm" onsubmit="return checkConsignee(this)">
+{include file="/library/consignee.lbi"}
+</form>
+{/if}
+<!-- {/foreach} -->
+</div>
+</div>
+<!-- {/if} -->

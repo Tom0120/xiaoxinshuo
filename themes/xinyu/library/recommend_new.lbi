@@ -1,0 +1,41 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $new_goods} -->
+<div class="boutique fl wfs" style="margin-top:20px;">
+<div class="canvas">
+<ul class="items">
+<!--{foreach from=$new_goods item=goods}-->
+<li class="items-li j-items-li" style="width:290px;margin-left:5px;">
+<a target="_blank" href="{$goods.url}"><img src="{$goods.goods_img}" title="{$goods.name|escape:html}" alt="{$goods.name|escape:html}" style="width:290px;height:290px;"></a>
+<div class="wrap_div">
+<div>
+<b class="title"><a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></b>
+<span class="description">
+<a href="javascript:addToCart({$goods.id})" target="_blank" title="">
+加入购物车                                     
+</a>
+-
+<a href="javascript:collect({$goods.id});" title="">
+关注商品                                      
+</a>
+</span>
+<p class="price-attente">
+{$goods.brief|truncate:22:true}                                
+</p>
+</div>
+</div>
+<p class="price-attente">
+<span class="price">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}-->                                                           
+</span>
+<span class="attente" title="浏览量">8573</span>
+</p>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+<!-- {/if} -->

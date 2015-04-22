@@ -1,0 +1,118 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $vote} -->
+{insert_scripts files='jquery-1.9.1.min.js,jquery.json.js'}
+{insert_scripts files='transport.js'}
+<div id="ECS_VOTE">
+<!-- 问卷调查页面start -->
+<div class="survey">
+<div id="Banner fl wfs">
+<div class="BannerTop">
+<div class="Banner">
+<span class="Icon Icon01"> </span>
+<span class="Icon Icon02"> </span>
+</div>
+</div>
+<div class="BannerBottom">
+<div class="BannerText">
+<h2>亲爱的用户</h2>
+<p>我们会每天关注您的反馈，不断优化产品，为您提供更好的服务！</p>
+</div>
+</div>
+</div>
+<div id="Main">
+<div class="Main">
+<form id="formvote" name="ECS_VOTEFORM" method="post" action="javascript:submit_vote()">
+
+<!-- {foreach from=$vote item=title} -->
+<!-- {if $smarty.foreach.top_goods.iteration<4}-->
+<dl>
+<dt class="clearFix"><i>1</i><span>{$title.vote_name}</span><span style="float:right;font-size:13px">({$lang.vote_times}:{$title.vote_count})</span></dt>
+<dd>
+<ul class="clearFix">
+<!-- {foreach from=$vote item=title} -->
+<!-- {foreach from=$title.options item=item} -->
+<!-- {if $title.can_multi eq 0} -->
+<li><input type="checkbox" name="option_id" value="{$item.option_id}" />
+{$item.option_name} ({$item.percent}%)</li>
+<!-- {else} -->
+<li><input type="radio" name="option_id" value="{$item.option_id}" />
+{$item.option_name} ({$item.percent}%)</li>
+<!-- {/if} -->
+<!-- {/foreach} -->
+<input type="hidden" name="type" value="{$title.can_multi}" />
+<!-- {/foreach} -->
+</ul>
+</dd>
+</dl>
+{/if}
+<!-- {/foreach} -->
+<dl>
+<dd>
+<input type="hidden" name="id" value="{$vote_id}" />
+<input name="submit" type="submit" class="InputSub" />
+</dd>
+</dl>
+</form>
+</div>
+</div>
+</div>
+<div class="blank5"></div>
+<script type="text/javascript">
+{literal}
+/**
+* 处理用户的投票
+*/
+function submit_vote()
+{
+var frm     = document.forms['ECS_VOTEFORM'];
+var type    = frm.elements['type'].value;
+var vote_id = frm.elements['id'].value;
+var option_id = 0;
+
+if (frm.elements['option_id'].checked)
+{
+option_id = frm.elements['option_id'].value;
+}
+else
+{
+for (i=0; i<frm.elements['option_id'].length; i++ )
+{
+if (frm.elements['option_id'][i].checked)
+{
+option_id = (type == 0) ? option_id + "," + frm.elements['option_id'][i].value : frm.elements['option_id'][i].value;
+}
+}
+}
+
+if (option_id == 0)
+{
+return;
+}
+else
+{
+Ajax.call('vote.php', 'vote=' + vote_id + '&options=' + option_id + "&type=" + type, voteResponse, 'POST', 'JSON');
+}
+}
+
+/**
+* 处理投票的反馈信息
+*/
+function voteResponse(result)
+{
+if (result.message.length > 0)
+{
+alert(result.message);
+}
+if (result.error == 0)
+{
+var layer = document.getElementById('ECS_VOTE');
+
+if (layer)
+{
+layer.innerHTML = result.content;
+}
+}
+}
+{/literal}
+</script>
+<!-- {/if} -->

@@ -1,0 +1,68 @@
+{* TitlePicWidth: 989 *}
+{* TitlePicHeight: 112 *}
+{* 说明：$title_pic，分类标题图片地址； *}
+{* 说明：$base_style，基本风格样式颜色； *}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"    >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>易佳商城专题页面</title>
+<!-- #BeginLibraryItem "/library/commoncss.lbi" --><!-- #EndLibraryItem -->
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/xinyu_nav.lbi" --><!-- #EndLibraryItem -->
+<div class="cover-page-index fl wfs pt50">
+<div id="special" style="background:url(http://www.xiaoxinshuo.com/themes/xinyu/topic/picbj.jpg)  repeat-y;margin-top:-49px;">
+<div id="model_1" name="model_1">
+<!--视频图片 开始 -->
+<div class="img_map" style="width: 100%; height:593px;background: url(themes/xinyu/topic/bj123.jpg) center 0 no-repeat">
+<div class="img_center" style="position: relative; width: 960px; margin: 0px auto; height: 593px; border: none; background-image: none;">
+<div class="hotspot videobox" style="position: absolute; left: 107px; top: 200.6500244140625px; height: 369px; width: 750px; " id="1414492302946" target="_blank" data-swf="http://player.youku.com/player.php/sid/XODE0OTA4Njg4/v.swf">
+{insert name='ads' id=6 num=1}
+</div>
+</div>
+</div>
+<!-- 视频图片 结束 -->
+</div>
+<div id="model_1" name="model_1" style="margin-top:30px;">
+<img src="http://www.xiaoxinshuo.com/themes/xinyu/topic/spxiam.png"/>
+</div>
+<div id="model_1" name="model_1">
+<! -- 单图产品1 开始 -->
+<div class="img_map" style="width: 100%; text-align:center;height:468px;border-bottom:1px solid #d0c9c3;>
+{insert name='ads' id=5 num=1}
+</div>
+<! -- 单图产品1  结束 -->
+</div>
+<div id="model_2" name="model_2">
+<! -- 单图产品2  开始 -->
+<div style="width: 100%; text-align:center;height:463px;>
+{insert name='ads' id=7 num=1}
+</div>
+<! -- 单图产品2  结束 -->
+</div>
+<div id="model_3" name="model_3">
+<! -- 3图产品  开始 -->
+<div style="width: 100%; height:624px;border-top:1px solid #d0c9c3;">
+<div class="img_center" style="position: relative; width: 960px; margin: 0px auto; height: 594px; border: none; background: none;">
+<li class="hotspot linkbox" style="position: absolute; left: -22px; top: 20px; height: 495px; width: 285px;" id="1414492371641">
+{insert name='ads' id=8 num=1}
+</li>
+<li class="hotspot linkbox" style="position: absolute; left: 332px; top: 20px; height: 495px; width: 285px;" id="1414492391252">
+{insert name='ads' id=9 num=1}
+</li>
+<li class="hotspot linkbox" style="position: absolute; left: 646px; top: 20px; height: 495px; width: 285px;" id="1414492425752">
+{insert name='ads' id=10 num=1}
+</li>
+</div>
+</div>
+<! --3图产品 结束 -->
+</div>
+</div>
+
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+.regist-process-body {
+    *width: 1090px;
+    margin-top: 22px;
+ 
+    background-color: #fafafa;
+   
+}
+/*购物车头部*/
+.cartMain h3,.paymentMode1 .payMore i,.InfoTitle-1 i,.settlementList li .settlementWrap .settlementTitle i,.subBtn i,.dOrder-city .dOrder-city-sel i,.h5_dptctdrp a i,.select_more .more i{ background:url(../../images/order.png) no-repeat 0 0;}
+.paymentMode1 li label b,.paymentMode2 li label b{ background:url(../images/bank.png) no-repeat 0 0; width:126px; height:30px; display:inline-block; float:right;}
+.orderFlow{ width:534px; height:66px; float:right; margin-top:40px;}
+.of-bg1{ background:url(../images/order.jpg) no-repeat left 32px;}
+.orderFlow span{ display:inline-block; width:178px; line-height:34px; text-align:center;}
+.orderFlow .oStatus{ color:#cc0000;}
+
+.shop-cart-wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+.entry-bg{background:#FAFAFA;-moz-border-radius:5px; -webkit-border-radius:5px;border-radius:5px;padding:3px;margin-bottom:150px;}
+.item span {color: #999999;height: 20px; line-height: 20px;display:block;margin-top:1px;}
+.free-regist span{position: absolute;margin-left:290px;margin-top:-67px;text-align:center;font-size:14px;background:#7cbe56;width:115px;height:40px;line-height:40px;color:#FFF;-moz-border-radius:0 0 3px 3px; -webkit-border-radius:0 0 3px 3px;border-radius:3px;}
+.free-regist span a{color:#FFF;}
+.free-regist a:hover{color:#F2F2F2;}
+.text{float:none;width:282px;height:35px; text-indent:20px;line-height:35px;padding:4px;border:1px solid #cccccc;font-size:14px;}
+.qbcdl span {position: absolute;color: #999999;height: 20px; font-size:12px;line-height: 20px;display:block;margin-top:-16px;margin-left:20px;}
+.login-btn2013{height:52px;}
+.login-btn2013 .denglu{width:150px;height:40px;background:#EA6764;color:#FFF;border:none;border-radius:3px;}
+.shdz{background:#FFF;height:330px;margin-top:30px;width:890px;border:1px solid #ccc;padding:20px;margin-bottom:20px;}
+.inputBg{height:35px;width:350px;}
+.bnt_blue_2{background:#EA6764;border:none;color:#FFF;padding:5px;}
+.f6{color:#e40000;}

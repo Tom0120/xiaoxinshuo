@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{$shop_name}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+{include file='common_xinyu.html'}
+</head>
+<body>
+{include file='head.html'}
+<form name="searchForm" method="get" action="search.php" class="search">
+<input name="keywords" id="keyword" type="text" class="keyword" value="" placeholder="请输入关键词">
+<input type="submit" value="搜索" class="search-button">
+</form>
+{if $searchkeywords11111111}
+<div class="w">热门：{foreach from=$searchkeywords item=val}<a href="search.php?keywords={$val|escape:url}">{$val}</a> {/foreach}</div>
+{/if}
+<div class="gwDiv" style="width:304px; margin:0px auto; margin-top:5px; margin-bottom:5px;">
+<a href="" target="_blank">
+<div class="gw1" style="width:148px; float:left; background-color:#66CC66; color:#FFF">
+<div style="width:35%; float:left; text-align:right"><img src="images/home_pay.png" height="25"  /></div>
+<div style=" width:65%; float:right; line-height:38px; text-align:left">&nbsp;订单付款</div>
+</div>
+</a>
+<a href="tel:18634631891">
+<div class="gw1" style="width:148px; float:right; background-color:#66CCFF; color:#FFF">
+<div style="width:35%; float:left;text-align:right"><img src="images/home_tel.png" height="25"  /></div>
+<div style=" width:65%; float:right;line-height:38px; text-align:left">&nbsp;客服热线</div>
+</div>
+</a>
+</div>
+<div style="height:1px; line-height:1px; clear:both; width:300px; font-size:1px; margin:0px auto"></div>
+
+<!----------------------分类--------------------------------->
+
+
+<div class="bodyDiv">
+
+<!--menu S-->
+{if $hot_num > 0}
+<div class="menuDiv" style=" width:305px">
+<a href="goods_list.php?type=hot">
+<div class="ml">
+
+<div class="list_flag">A</div>
+</div>
+<div class="mc">热卖鲜花</div>
+<div class="mr">更多>></div>
+</a>
+</div>
+<div class="clear" style="width:305px"></div>
+<!---->
+<div class="listDiv">
+<ul class="listul">
+
+{foreach from=$hot_goods item=hot_data name=goo}
+<li style=" margin-right:3px">
+<!--item S-->
+<div class="prodiv">
+<div class="imgdiv" style="border:1px #CCCCCC solid"> <a href="goods.php?id={$hot_data.id}"><img src="../{$hot_data.thumb}"  /></a> </div>
+<div class="proprice"> {$hot_data.shop_price} </div>
+<div class="proname"> <a href="goods.php?id={$hot_data.id}">{$hot_data.name}</a> </div>
+</div>
+<!--item E-->
+</li>
+{/foreach}
+
+</ul>
+<div style="clear:both"></div>
+</div>
+ {/if}
+<!---->
+
+
+
+
+<!-----------------推荐--------------------------------------->
+
+{if $best_num > 0}
+<div class="menuDiv" style=" width:305px">
+<a href="goods_list.php?type=hot">
+<div class="ml">
+
+<div class="list_flag">B</div>
+</div>
+<div class="mc">推荐鲜花</div>
+<div class="mr">更多>></div>
+</a>
+</div>
+<div class="clear" style="width:305px"></div>
+<!---->
+<div class="listDiv">
+<ul class="listul">
+
+{foreach from=$best_goods item=best_data name=goo}
+<li style=" margin-right:3px">
+<!--item S-->
+<div class="prodiv">
+<div class="imgdiv" style="border:1px #CCCCCC solid"> <a href="goods.php?id={$best_data.id}"><img src="../{$best_data.thumb}"  /></a> </div>
+<div class="proprice"> 
+{if $promote_price}{$best_data.promote_price}{else}{$best_data.shop_price}{/if} 
+</div>
+<div class="proname"> <a href="goods.php?id={$best_data.id}">{$best_data.name}</a> </div>
+</div>
+<!--item E-->
+</li>
+{/foreach}
+
+</ul>
+<div style="clear:both"></div>
+</div>
+ {/if}
+<!--   ---------------推荐-------------------------------------->
+
+
+
+
+
+
+</div>
+
+<!----------------------分类------------------------>
+
+
+
+<div class="black"></div>
+
+{include file='common_footer.html'}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <div class="help_left">
+<div class="help_title"><p>帮助中心</p></div>
+<div class="help_nav_box">
+<ul>
+<!-- {foreach from=$helps item=help_cat name=help_list} -->
+<li>
+<div class="nav_1ji"><p>{$help_cat.cat_name}</p></div>
+<div style=" " class="nav_2ji">
+<ul>
+<!-- {foreach from=$help_cat.article item=item} -->
+<li><a href="help.php?id={$item.article_id}" title="{$item.title|escape:html}" class="hover">{$item.short_title}</a></li>
+<!-- {/foreach} -->
+</ul>
+</div>
+</li>
+<!-- {/foreach} -->
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<script src="themes/xinyu/js/help-view.js"></script>
+<script >
+var iShow=0;//展开第几个
+if(0 != ''){
+  iShow = 0
+}
+</script>
+</div>

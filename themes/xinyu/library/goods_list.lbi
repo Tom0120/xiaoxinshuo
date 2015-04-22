@@ -1,0 +1,178 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--右侧主内容begin-->
+<div class="main-srp">
+<!--导航begin-->
+<div class="breadcrumb">
+<div class="line">
+</div>
+<div class="crumb clearfix">
+<i class="square"></i>{$ur_here}<i class="arrow"></i>
+</div>
+</div>
+<!--导航end-->
+<!-- 通用分类begin -->
+<div class="select">
+<!--{if $brands.1 || $price_grade.1 || $filter_attr_list}-->
+<!-- 品牌begin -->
+<!--{if $brands.1}-->
+<div class=" alcohol property clearfix" style="display:block">
+<div class="selectLine1 clearfix">
+<div class="proLeft">
+品牌
+</div>
+<div class="proRight limit flow showHide clearfix ">
+<ul class="clearfix">
+<!--{foreach from=$brands item=brand}-->
+<li><a href="{$brand.url}">{$brand.brand_name}</a></li>
+<!--{/foreach}-->
+</ul>
+<a class="open" href="#">展开<i></i></a>
+</div>
+</div>
+<!-- {/if} -->
+<!-- 品牌end -->
+<!--{if $price_grade.1}-->
+<!-- 价格begin -->
+<div class="selectLine2 clearfix" style="border-top: 1px dotted #ccc;">
+<div class="proLeft">
+价格
+</div>
+<div class="proRight clearfix">
+<ul class="clearfix">
+<!--{foreach from=$price_grade item=grade}-->
+<li  style="width:82px;" ><a href="{$grade.url}">{$grade.price_range}</a></li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+<!-- 价格end -->
+<!--{/if}-->
+<!--{foreach from=$filter_attr_list item=filter_attr}-->
+<!-- 其他属性begin -->
+<div class="ty_sycj selectLine1 clearfix" style="border-top: 1px dotted #ccc;">
+<div class="proLeft">
+{$filter_attr.filter_attr_name|escape:html}
+</div>
+<div class="proRight clearfix">
+<ul class="clearfix">
+<!--{foreach from=$filter_attr.attr_list item=attr}-->
+<li><a href="{$attr.url}">{$attr.attr_value}</a></li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+<!-- 其他属性end -->
+<!--{/foreach}-->
+</div>
+<!-- {/if} -->
+</div>
+<!-- 通用分类end -->
+<!--排序begin-->
+<div class="order" id="order">
+<ul class="clearfix">
+<li class="tab first "><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=goods_id&order=<!-- {if $pager.sort == 'goods_id' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list">默认排序</a></li>
+<li class="tab"><a href="">销量 <i></i></a></li>
+<li class="tab jg"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=shop_price&order=<!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} -->DESC<!-- {else} -->ASC<!-- {/if} -->#goods_list" title=" 默认 ">价格 <i style="background-position: -86px -108px; "></i></a></li>
+<!--li class="tab"><a href="#" title=" 默认 ">评价 <i></i></a></li-->
+<li class="tab sjsj"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=last_update&order=<!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" title=" 默认 ">上架时间 <i></i></a></li>
+<!--li class="priceArea clearfix" pricearea="0">
+<span class="left clearfix"><i>&yen;</i><input type="text" value="" id="minPrice"></span><span class="zhi"></span>
+<span class="right clearfix"><i>&yen;</i><input type="text" value="" id="maxPrice"></span>
+<span class="sure"><a class="ok" href="#">确定</a><a class="cancle" href="#">取消</a></span>
+</li-->
+<li class="page clearfix">
+<p>
+<span class="cur">1</span><span>/</span><span class="total">{$pager.page_count}</span>
+</p>
+<a class="btn prev" href="#" style="background-position: 0px -142px; "></a>
+<a class="btn next" href="#" style="background-position: -35px -142px; "></a>
+</li>
+<li class="relate">相关产品<span>{$pager.record_count}</span>件</li>
+</ul>
+</div>
+<!--排序end--><!-- 商品列表begin -->
+<div class="proListSearch">
+<ul class="clearfix">
+<!--{foreach from=$goods_list item=goods}-->
+ <!-- {if $goods.goods_id} -->
+<li>
+<div class="frameA">
+<div class="frameB">
+</div>
+</div>
+<div class="content clearfix">
+<div class="collect_box">
+<span class="collect" id="cell_9892"><a href="javascript:collect({$goods.goods_id});" style="color:#FFF"><i></i>收藏</a></span>
+<a class="img clearfix" href="{$goods.url}" title="{$goods.goods_name}" target="_blank">
+<span id="mark_9892" class="cxtag tj" style="display:none"></span>
+<img proimgid="9892" src="{$goods.goods_thumb}"/></a>
+</div>
+<a class="proName" href="{$goods.url}" title="{$goods.goods_name}" target="_blank">{$goods.goods_name}<span id="promote_9892" class="slogan">{$goods.goods_brief}</span></a>
+<div class="priceArea clearfix">
+<p class="price" id="product_9892">
+<!--{if $goods.promote_price neq "" } -->
+{$goods.promote_price}
+<!--{else}-->
+{$goods.shop_price}
+<!--{/if}-->
+</p>
+<div id="activity_9892">
+</div>
+</div>
+<a class="judge" href="{$goods.url}#answerArea" title="" target="_blank">已有<span>{$goods.comment_count}</span>人评价</a>
+
+<div class="buyArea clearfix">
+<span>
+<input name="number" type="text" value="1" defaultnumber="1" onblur="changePrice()" id="product_num">
+</span>
+<div class="edit">
+<a class="increase" href="{$goods.url}"></a><a class="decrease" href="#"></a>
+</div>
+<a class="cart clearfix prtlt_btn2" href="javascript:addToCart({$goods.goods_id})">加入购物车</a>
+</div>
+</div>
+</li>
+<!--{/if}-->
+ <!--{/foreach}-->
+</ul>
+</div>
+<!-- 商品列表end -->
+<!-- 翻页/搜索 -->
+{include file="library/pages.lbi"}
+<!--div class="clearfix">
+<div class="searchBottom">
+<form action="" method="get">
+<input id="bottomKeys" type="text" name="keys" value=" "/><a class="searchBottomBtn" href="#">搜索</a>
+</form>
+</div>
+</div-->
+</div>
+<!--右侧主内容end-->
+<script type="Text/Javascript" language="JavaScript">
+<!--
+{literal}
+function selectPage(sel)
+{
+  sel.form.submit();
+}
+{/literal}
+//-->
+</script>
+<script type="text/javascript">
+window.onload = function()
+{
+  Compare.init();
+  fixpng();
+}
+{foreach from=$lang.compare_js item=item key=key}
+{if $key neq 'button_compare'}
+var {$key} = "{$item}";
+{else}
+var button_compare = '';
+{/if}
+{/foreach}
+var compare_no_goods = "{$lang.compare_no_goods}";
+var btn_buy = "{$lang.btn_buy}";
+var is_cancel = "{$lang.is_cancel}";
+var select_spe = "{$lang.select_spe}";
+</script>

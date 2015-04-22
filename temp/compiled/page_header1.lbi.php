@@ -1,0 +1,61 @@
+<?php echo $this->smarty_insert_scripts(array('files'=>'transport.js')); ?>
+<div  class="site-nav">
+<div class="site-nav-bd" >
+<ul  class="site-nav-bd-l" >
+<li class="menu favorite">
+<div class="menu-hd">
+<a target="_top"><span class="iconfont"><img src="themes/xinyu/images/shouchang.png" alt="孝心说官方微信"></span><span><?php echo $this->_var['lang']['welcome']; ?></span></a>
+</div>
+<div class="menu-bd menu_w"> <img src="themes/xinyu/images/weixin1.png" alt="孝心说官方微信"> </div>
+</li>
+<li id="J_Weekend" class="menu weekend" ><div class="menu-hd"><a target="_top" onclick="javascript:addFavorite2()"><span>收藏孝心说</span></a></div></li>
+</ul>
+<ul id="J_SiteNavBdR" class="site-nav-bd-r">
+ <font id="ECS_MEMBERZONE"><?php 
+$k = array (
+  'name' => 'member_info',
+);
+echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
+?> </font>
+</ul>
+</div>
+</div>
+<div class="blank5"></div>  
+<script type="text/javascript">
+(function(){ 
+var $menuLi =$('#nav .menu');
+var $menuHd = $('#nav .menu-hd');
+var $menuBd = $('#nav .menu-bd');
+var $arrow = $('#nav .m1 i');
+$menuBd.hover(function(){
+$menuHd.addClass('on');
+},function(){
+$menuHd.removeClass('on');
+});
+$menuLi.hover(function(){
+$menuHd.children('b').addClass('b-on');
+},function(){
+$menuHd.children('b').removeClass('b-on');
+})
+})();
+</script>
+<style>
+.menu_w {
+        POSITION: relative;
+	left: 134px;
+	top: 30px;
+}
+.site-nav-bd .favorite .menu_w img {
+	background: none;
+}
+.site-nav-bd .favorite:hover .menu-bd {
+	MARGIN-TOP: -1px;
+	DISPLAY: block;
+	Z-INDEX: 999999;
+	POSITION: absolute;
+}
+.toppromo{margin:0 auto;position:relative;text-align:center;}
+.topclose{position:absolute;top:5px;left:50%;margin-left:645px;width:25px;height:16px;background:url(themes/xinyu/images/guanbi.gif) no-repeat center center;cursor:pointer;text-indent:-9999px;}
+.toppromo .banner{width:100%;height:50px;}
+.toppromo .banner a{width:1200px;height:50px;display:block;text-indent:-9999px;margin:0 auto;}
+</style>

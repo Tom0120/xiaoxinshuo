@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="themes/xinyu/css/index.css">
+<script src="themes/xinyu/js/jquery.min.js"></script>
+<script type='text/javascript' src='themes/xinyu/js/jquery.lazyload.js'></script>
+
+<script type="text/javascript">
+	$(function(){
+		$('img[data-original]').lazyload({effect:"fadeIn"});
+	})
+</script>
+
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+
+{insert_scripts files='common.js,index.js,utils.js'}

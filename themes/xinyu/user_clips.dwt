@@ -1,0 +1,32 @@
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="themes/xinyu/css/base.css" type="text/css" rel="stylesheet" />
+<link href="themes/xinyu/css/user_nav.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="themes/xinyu/css/user.css">
+
+{* 包含脚本文件 *}
+{insert_scripts files='jquery-1.9.1.min.js,jquery.json.js'}
+{insert_scripts files='transport.js,common.js,user.js,utils.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header_category.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/xinyu_nav_common.lbi" --><!-- #EndLibraryItem -->
+<div class="clear"  style="height:5px"><a name="v2"></a></div>
+<div class="user clearfix">
+<!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_default.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_my_collect.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_comment_list.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_message_list.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_booking_list.lbi" --><!-- #EndLibraryItem -->
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</html>

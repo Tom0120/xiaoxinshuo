@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$app_name}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="styles/style.css" rel="stylesheet" type="text/css" />
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(function(){	
+	//顶部导航切换
+	$(".nav li a").click(function(){
+		$(".nav li a.selected").removeClass("selected")
+		$(this).addClass("selected");
+	})	
+})	
+</script>
+<script type="text/javascript">
+
+function modalDialog(url, name, width, height)
+{
+  if (width == undefined)
+  {
+    width = 400;
+  }
+  if (height == undefined)
+  {
+    height = 300;
+  }
+
+  if (window.showModalDialog)
+  {
+    window.showModalDialog(url, name, 'dialogWidth=' + (width) + 'px; dialogHeight=' + (height+5) + 'px; status=off');
+  }
+  else
+  {
+    x = (window.screen.width - width) / 2;
+    y = (window.screen.height - height) / 2;
+
+    window.open(url, name, 'height='+height+', width='+width+', left='+x+', top='+y+', toolbar=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, modal=yes');
+  }
+}
+
+function ShowToDoList()
+{
+  try
+  {
+    var mainFrame = window.top.frames['main-frame'];
+    mainFrame.window.showTodoList(adminId);
+  }
+  catch (ex)
+  {
+  }
+}
+{/literal}
+
+var adminId = "{$admin_id}"; 
+</script>
+{insert_scripts files="../js/transport.js,../js/jquery-1.9.1.min.js,../js/js/jquery.json.js"}
+</head>
+<body style="background:url(images/topbg.gif) repeat-x;">
+<div class="topleft">
+<a href="http://www.xiaoxinshuo.com" target="_parent"><img src="images/logo.png" title="孝心说团队开发" /></a>
+</div>
+<ul class="nav">
+<li><a href="index.php?act=main" target="main-frame"><img src="images/icon01.png" title="{$lang.admin_home}" />
+<h2>{$lang.admin_home}</h2></a></li>
+<li><a href="privilege.php?act=modif" target="main-frame"><img src="images/icon03.png" title="{$lang.set_navigator}" /><h2>{$lang.set_navigator}</h2></a></li>
+<li><a href="template.php?act=setup" target="main-frame"><img src="images/icon02.png" title="设置模版" /><h2>设置模版</h2></a></li>
+{foreach from=$nav_list item=item key=key name=top_goods}
+<li><a href="{$key}" target="main-frame">
+<!-- {if $smarty.foreach.top_goods.iteration eq 1}-->
+<img src="images/icon04.png" title="{$item}" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 2}-->
+<img src="images/icon05.png" title="{$item}" />
+<!-- {/if}-->
+<!-- {if $smarty.foreach.top_goods.iteration eq 3}-->
+<img src="images/icon06.png" title="{$item}" />
+<!-- {/if}-->
+<h2>{$item}</h2></a></li>
+{/foreach}
+</ul>
+<div class="topright">    
+<ul>
+<li><a href="../" target="_blank">{$lang.preview}</a></li>
+<li><a  onclick="ShowToDoList()" target="_blank">{$lang.todolist}</a></li>
+<li><a href="index.php?act=about_us" target="main-frame">{$lang.about}</a></li>
+<li><a href="javascript:window.top.frames['main-frame'].document.location.reload();window.top.frames['header-frame'].document.location.reload()" target="main-frame"" target="_top">{$lang.refresh}</a></li>
+<li><a href="index.php?act=clear_cache" target="main-frame">{$lang.clear_cache}</a></li>
+<li><a href="privilege.php?act=logout" target="_top">{$lang.signout}</a></li>
+</ul>
+<div class="user">
+<span>{$admin_name}</span>
+<a href="message.php?act=list" target="main-frame"><i>消息</i></a>
+<a href="user_msg.php?act=list_all" target="main-frame"><b>{$feedback_number}</b></a>
+</div>    
+</div>
+</body>
+</html>

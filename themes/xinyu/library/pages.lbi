@@ -1,0 +1,57 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--翻页 start-->
+<form name="selectPageForm" action="{$smarty.server.PHP_SELF}" method="get">
+<!-- {if $pager.styleid eq 0 } -->
+<div class="fl wfs">
+<ul class="pagination pages">
+<li><a><span>{$lang.pager_1}{$pager.record_count}{$lang.pager_2}</span></a></li>
+<li><a><span>{$lang.pager_3}{$pager.page_count}{$lang.pager_4}</a></span></li>
+<li <!-- {if $pager.page_first} -->class="active"{else} {/if}><a href="{$pager.page_first}"><span>{$lang.page_first}</span></a></li>
+<li <!-- {if $pager.page_prev} -->class="active"{else} {/if}><a href="{$pager.page_prev}"><span>{$lang.page_prev}</span></a> </li>
+<li <!-- {if $pager.page_next} -->class="active"{else} {/if}><a href="{$pager.page_next}"><span>{$lang.page_next}</span></a></li>
+<li <!-- {if $pager.page_last} -->class="active"{else} {/if}><a href="{$pager.page_last}"><span>{$lang.page_last}</span></a></li>
+<li><a><span>
+<!--{foreach from=$pager.search key=key item=item}-->
+{if $key eq 'keywords'}
+<input type="hidden" name="{$key}" value="{$item|escape:decode_url}" />
+{else}
+<input type="hidden" name="{$key}" value="{$item}" />
+{/if}
+<!--{/foreach}-->
+<select name="page" id="page" onchange="selectPage(this)">
+{html_options options=$pager.array selected=$pager.page}
+</select>
+</span></a></li>
+</ul>
+</div>
+<!--{else}-->
+<!--翻页 start-->
+<div class="clearfix">
+<div class="fanye clearfix">
+<!-- {if $pager.page_count neq 1} -->
+<a href="{$pager.page_prev}" class="prevpage">上一页</a>
+<!--{foreach from=$pager.page_number key=key item=item}-->
+<!-- {if $pager.page eq $key} -->
+<a class="number on" >{$key}</a>
+<!-- {else} -->
+<a href="{$item}"  class="number" class="active">{$key}</a>
+<!-- {/if} -->
+<!--{/foreach}-->
+  	
+<a href="{$pager.page_next}" class="nextpage">下一页</a>
+<!-- {/if} -->
+</div>
+</div>
+<!--翻页 END-->
+{/if}
+</form>
+<script type="Text/Javascript" language="JavaScript">
+<!--
+{literal}
+function selectPage(sel)
+{
+sel.form.submit();
+}
+{/literal}
+//-->
+</script>

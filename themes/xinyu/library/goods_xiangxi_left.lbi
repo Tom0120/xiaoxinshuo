@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--左侧推荐begin-->
+<div class="reco">
+{include file="library/goods_related.lbi"}
+{include file="library/goods_attrlinked.lbi"}
+{include file="library/bought_goods.lbi"}
+{include file="library/top10.lbi"}
+{include file="library/history.lbi"}
+<!--广告位begin-->
+<div class="ad">
+<ul id="adv">
+</ul>
+</div>
+<!--广告位end-->
+</div>
+<!--左侧推荐end-->
