@@ -13,7 +13,7 @@
  * $Id: index.php 15013 2010-03-25 09:31:42Z liuhui $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 define('ECS_ADMIN', true);
 
 require(dirname(__FILE__) . '/includes/init.php');

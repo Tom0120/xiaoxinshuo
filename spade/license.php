@@ -13,7 +13,7 @@
  * $Id: flashplay.php 16131 2009-05-31 08:21:41Z wangleisvn $
  */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 

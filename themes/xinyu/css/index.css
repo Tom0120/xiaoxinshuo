@@ -404,10 +404,10 @@ text-align: center;
 }
 /* 以下就是--主频道--不同页面的专属css */
 /* 网站顶部css */
-.toppromo{margin:0 auto;position:relative;text-align:center;}
-.toppromo .banner{width:100%;height:50px;}
-.toppromo .banner a{height:50px;display:block;text-indent:-9999px;margin:0 auto;}
-.topclose{position:absolute;top:5px;right:15px;width:16px;height:16px;background:url(../images/guanbi.gif) no-repeat center center;cursor:pointer;text-indent:-9999px;}
+.top-banner{margin:0 auto;position:relative;text-align:center;}
+.top-banner .banner{width:100%;height:50px;}
+.top-banner .banner a{height:50px;display:block;text-indent:-9999px;margin:0 auto;}
+.top-close{position:absolute;top:5px;right:15px;width:16px;height:16px;background:url(../images/guanbi.gif) no-repeat center center;cursor:pointer;text-indent:-9999px;}
 
 .site-nav{Z-INDEX:10000;BACKGROUND:#f8f8f8;WIDTH:100%;border-bottom:1px solid #eee;ZOOM:1;color:#666;}
 .site-nav .iconfont{FONT-SIZE:12px;FONT-STYLE:normal;}
@@ -2136,9 +2136,9 @@ background-color: #ef353d;
 .imgtable tbody tr:hover{background:#ccc;}
 
 /* layout */
-.style0 .hd .changeBnt i,.picLB .ftBox .name b{background:url(../images/bntIcon.png) no-repeat ;}
+.style0 .hd .changeBnt i,.picLB .ftBox .name b{background:url(../images/bntIcon.png) no-repeat;}
 .layout{width:1090px;}
-.style0 .hd{height:40px;line-height:40px;position:relative;border-bottom:2px solid #eee;}
+.style0 .hd{height:38px;line-height:38px;position:relative;border-bottom:2px solid #eee;}
 .style0 .hd .mt-tag-elem{display:inline-block;width:110px;height:30px;line-height:30px;text-align:center;font-size:16px;color:#fff;background:url(../images/head_icon.png) no-repeat}
 .style0 .border{display:block;overflow:hidden;position:absolute;width:1010px;border-bottom:2px solid #eee;top:30px;}
 .style0 .hd a{font-size:14px;}
@@ -2146,14 +2146,14 @@ background-color: #ef353d;
 .style0 .hd .changeBnt1{height:23px;text-align:right;background:#FFF;float:right;right:15px;line-height:23px;}
 .style0 .hd .changeBnt:hover{color:#e55656;text-decoration:none;}
 .menu-header{display:inline-block;position:relative;}
-.menu-ico {background: url(../images/head_icon.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);display:inline-block;height:40px;width:140px;pointer-events:none;vertical-align:middle;}
-.ico-eat-c{background-position:-2px -34px;}
+.menu-ico {background: url(../images/head_icon.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);display:inline-block;height:38px;width:140px;pointer-events:none;vertical-align:middle;}
+.ico-eat-c{background-position:-2px -27px;}
 .ico-massage-c{background-position:-2px -4px;}
-.ico-test-c{background-position:-2px -115px;}
-.ico-resure-c{background-position:-2px -154px;}
-.ico-common-c{background-position:-2px -200px;}
-.ico-ele-c{background-position:-2px -250px;}
-.ico-gift-c{background-position:-2px -290px;}
+.ico-test-c{background-position:-2px -102px;}
+.ico-resure-c{background-position:-2px -136px;}
+.ico-ele-c{background-position:-2px -170px;}
+.ico-common-c{background-position:-2px -202px;}
+.ico-gift-c{background-position:-2px -250px;}
 
 
 

@@ -13,7 +13,7 @@
  * $Id: activity.php 16056 2009-05-21 05:44:14Z liubo $
  */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 require_once(ROOT_PATH . 'includes/lib_order.php');

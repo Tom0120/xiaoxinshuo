@@ -54,8 +54,8 @@ $menuHd.children('b').removeClass('b-on');
 	Z-INDEX: 999999;
 	POSITION: absolute;
 }
-.toppromo{margin:0 auto;position:relative;text-align:center;}
-.topclose{position:absolute;top:5px;left:50%;margin-left:645px;width:25px;height:16px;background:url(themes/xinyu/images/guanbi.gif) no-repeat center center;cursor:pointer;text-indent:-9999px;}
-.toppromo .banner{width:100%;height:50px;}
-.toppromo .banner a{width:1200px;height:50px;display:block;text-indent:-9999px;margin:0 auto;}
+.top-banner{margin:0 auto;position:relative;text-align:center;}
+.top-close{position:absolute;top:5px;left:50%;margin-left:645px;width:25px;height:16px;background:url(themes/xinyu/images/guanbi.gif) no-repeat center center;cursor:pointer;text-indent:-9999px;}
+.top-banner .banner{width:100%;height:50px;}
+.top-banner .banner a{width:1200px;height:50px;display:block;text-indent:-9999px;margin:0 auto;}
 </style>

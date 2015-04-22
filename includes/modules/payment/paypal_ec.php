@@ -22,7 +22,7 @@
 
         $API_Endpoint =API_ENDPOINT;
         $version=VERSION;
-if (!defined('IN_ECS'))
+if (!defined('IN_APP'))
 {
     die('Hacking attempt');
 }

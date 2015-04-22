@@ -13,7 +13,7 @@
  * $Id: user.php 16643 2009-09-08 07:02:13Z liubo $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 /* 载入语言文件 */

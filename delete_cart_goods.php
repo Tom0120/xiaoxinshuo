@@ -13,7 +13,7 @@
  * $Id: flow.php 15632 2009-02-20 03:58:31Z zblikai $
  */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 

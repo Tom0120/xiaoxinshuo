@@ -16,7 +16,7 @@
  * $Id: wholesale.php 17218 2011-01-24 04:10:41Z yehuaixiao $
  */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 

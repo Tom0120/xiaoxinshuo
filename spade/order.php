@@ -13,7 +13,7 @@
  * $Id: order.php 17157 2010-05-13 06:02:31Z yehuaixiao $
  */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 require_once(ROOT_PATH . 'includes/lib_order.php');

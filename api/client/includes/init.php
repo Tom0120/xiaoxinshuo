@@ -16,7 +16,7 @@
 
 error_reporting(7);
 
-if (!defined('IN_ECS'))
+if (!defined('IN_APP'))
 {
     die('Hacking attempt');
 }

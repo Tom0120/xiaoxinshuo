@@ -13,7 +13,7 @@
  * $Id: article.php 16455 2009-07-13 09:57:19Z liubo $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 

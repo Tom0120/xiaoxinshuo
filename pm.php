@@ -13,7 +13,7 @@
  * $Id: pm.php 17217 2011-01-19 06:29:08Z liubo $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 if (empty($_SESSION['user_id'])||$_CFG['integrate_code']=='ecshop')

@@ -10,19 +10,18 @@
 
 
 <link rel="shortcut icon" href="favicon.ico" />
-
 <?php echo $this->fetch('library/commoncss.lbi'); ?>
 </head>
 
 <body>
-<?php $_from = $this->_var['banner2']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'banner2_0_76053500_1429665419');if (count($_from)):
-    foreach ($_from AS $this->_var['banner2_0_76053500_1429665419']):
+<?php $_from = $this->_var['banner2']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'banner2_0_06672900_1429718313');if (count($_from)):
+    foreach ($_from AS $this->_var['banner2_0_06672900_1429718313']):
 ?>
-<div class="toppromo">
-<div class="banner" style="background:url(<?php echo $this->_var['banner2_0_76053500_1429665419']['ad_code']; ?>) no-repeat top center;">
-<a name="sfbest_hp_hp_headbanner_1" class="trackref" href="<?php echo $this->_var['banner2_0_76053500_1429665419']['ad_link']; ?>" target="_blank"><?php echo $this->_var['banner2_0_76053500_1429665419']['title']; ?></a>
+<div class="top-banner">
+<div class="banner" style="background:url(<?php echo $this->_var['banner2_0_06672900_1429718313']['ad_code']; ?>) no-repeat top center;">
+<a class="trackref" href="<?php echo $this->_var['banner2_0_06672900_1429718313']['ad_link']; ?>" target="_blank"><?php echo $this->_var['banner2_0_06672900_1429718313']['title']; ?></a>
 </div>
-<span class="topclose">关闭</span>
+<span class="top-close">关闭</span>
 </div> 
 </div>
 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
@@ -46,14 +45,12 @@
 <?php $this->assign('cat_goods',$this->_var['cat_goods_138']); ?><?php $this->assign('goods_cat',$this->_var['goods_cat_138']); ?><?php echo $this->fetch('library/cat_goods.lbi'); ?>
 
 
-
 </div>
 </div>
 <?php echo $this->fetch('library/page_footer.lbi'); ?>
-
 <script type="text/javascript">
-$(".topclose").click(function() {
-$(".topclose").hide();
+$(".top-close").click(function() {
+$(".top-close").hide();
 $(".banner").slideUp(500)
 });
 </script>

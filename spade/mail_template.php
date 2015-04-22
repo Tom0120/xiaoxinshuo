@@ -13,7 +13,7 @@
  * $Id: mail_template.php 17063 2010-03-25 06:35:46Z liuhui $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 

@@ -13,7 +13,7 @@
  * $Id: area_manage.php 17217 2011-01-19 06:29:08Z liubo $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 $exc = new exchange($ecs->table('region'), $db, 'region_id', 'region_name');

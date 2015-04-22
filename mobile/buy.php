@@ -13,7 +13,7 @@
  * $Id: buy.php 15013 2008-10-23 09:31:42Z testyang $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 setcookie("buy", "1", time()+3600);
 include_once(dirname(__FILE__) . '/includes/init.php');

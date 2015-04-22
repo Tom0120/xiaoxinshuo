@@ -13,7 +13,7 @@
  * $Id: lib_main.php 15013 2008-10-23 09:31:42Z testyang $
 */
 
-if (!defined('IN_ECS'))
+if (!defined('IN_APP'))
 {
 	die('Hacking attempt');
 }

@@ -16,7 +16,7 @@
  * $Id: template.php 17217 2011-01-19 06:29:08Z liubo $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 require_once('includes/lib_template.php');

@@ -12,7 +12,7 @@
  * $Id: user.php 17067 2010-03-26 03:59:37Z liuhui $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 require(dirname(__FILE__) . '/includes/lib_clips.php');

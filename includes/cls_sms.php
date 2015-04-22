@@ -13,7 +13,7 @@
  * $Id: cls_sms.php 17155 2010-05-06 06:29:05Z douqinghua $
  */
 
-if (!defined('IN_ECS'))
+if (!defined('IN_APP'))
 {
     die('Hacking attempt');
 }

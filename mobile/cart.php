@@ -2,7 +2,7 @@
 	
 //13:44 2013-07-05
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 require(ROOT_PATH . 'includes/lib_order.php');

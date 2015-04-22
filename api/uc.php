@@ -34,7 +34,7 @@ define('API_RETURN_SUCCEED', '1');
 define('API_RETURN_FAILED', '-1');
 define('API_RETURN_FORBIDDEN', '-2');
 
-define('IN_ECS', TRUE);
+define('IN_APP', TRUE);
 require './init.php';
 //数据验证
 if(!defined('IN_UC'))

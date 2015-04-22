@@ -13,7 +13,7 @@
  * $Id: search.php 16908 2009-12-18 08:25:08Z sxc_shop $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 if (empty($_GET['encode']))
 {

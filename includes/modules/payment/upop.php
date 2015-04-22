@@ -13,7 +13,7 @@
  * $Id: upop.php 17063 2010-03-25 06:35:46Z douqinghua $
  */
 
-if (!defined('IN_ECS'))
+if (!defined('IN_APP'))
 {
     die('Hacking attempt');
 }

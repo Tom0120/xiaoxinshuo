@@ -13,7 +13,7 @@
  * $Id: filecheck.php 15457 2008-12-16 10:42:26Z sunxiaodong $
 */
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 

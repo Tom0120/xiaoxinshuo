@@ -14,7 +14,7 @@
  */
 
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 require('./init.php');
 require_once(ROOT_PATH . 'includes/cls_json.php');

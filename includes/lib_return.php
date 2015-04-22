@@ -1,7 +1,7 @@
 <?php
 
 
-if (!defined('IN_ECS'))
+if (!defined('IN_APP'))
 {
     die('Hacking attempt');
 }

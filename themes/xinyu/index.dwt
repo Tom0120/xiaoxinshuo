@@ -10,17 +10,16 @@
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
 <link rel="shortcut icon" href="favicon.ico" />
-
 <!-- #BeginLibraryItem "/library/commoncss.lbi" --><!-- #EndLibraryItem -->
 </head>
 
 <body>
 {foreach from=$banner2 item=banner2}
-<div class="toppromo">
+<div class="top-banner">
 <div class="banner" style="background:url({$banner2.ad_code}) no-repeat top center;">
-<a name="sfbest_hp_hp_headbanner_1" class="trackref" href="{$banner2.ad_link}" target="_blank">{$banner2.title}</a>
+<a class="trackref" href="{$banner2.ad_link}" target="_blank"><!--{$banner2.title}--></a>
 </div>
-<span class="topclose">关闭</span>
+<span class="top-close">关闭</span>
 </div> 
 </div>
 {/foreach}
@@ -553,14 +552,12 @@
  <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 
-<!----------------------华丽分割线尾部---S------------------------------->
 </div>
 </div>
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
-<!----------------------华丽分割线尾部---E------------------------------->
 <script type="text/javascript">
-$(".topclose").click(function() {
-$(".topclose").hide();
+$(".top-close").click(function() {
+$(".top-close").hide();
 $(".banner").slideUp(500)
 });
 </script>

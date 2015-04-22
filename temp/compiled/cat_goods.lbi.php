@@ -26,52 +26,52 @@
 
         <div class="changeBnt">
         <?php if ($this->_var['goods_cat']['name'] == '饮食营养'): ?>
-        <?php $_from = $this->_var['thiscid76']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_79876700_1429540440');if (count($_from)):
-    foreach ($_from AS $this->_var['cat_0_79876700_1429540440']):
+        <?php $_from = $this->_var['thiscid76']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_25616800_1429715289');if (count($_from)):
+    foreach ($_from AS $this->_var['cat_0_25616800_1429715289']):
 ?>
-        <a href="<?php echo $this->_var['cat_0_79876700_1429540440']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_79876700_1429540440']['name']; ?></a>
+        <a href="<?php echo $this->_var['cat_0_25616800_1429715289']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_25616800_1429715289']['name']; ?></a>
         <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
         <?php endif; ?>
         <?php if ($this->_var['goods_cat']['name'] == '按摩理疗'): ?>
-        <?php $_from = $this->_var['thiscid2']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_79896200_1429540440');if (count($_from)):
-    foreach ($_from AS $this->_var['cat_0_79896200_1429540440']):
+        <?php $_from = $this->_var['thiscid2']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_25641800_1429715289');if (count($_from)):
+    foreach ($_from AS $this->_var['cat_0_25641800_1429715289']):
 ?>
-        <a href="<?php echo $this->_var['cat_0_79896200_1429540440']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_79896200_1429540440']['name']; ?></a>
+        <a href="<?php echo $this->_var['cat_0_25641800_1429715289']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_25641800_1429715289']['name']; ?></a>
         <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
         <?php endif; ?>
         <?php if ($this->_var['goods_cat']['name'] == '健康检测'): ?>
-        <?php $_from = $this->_var['thiscid111']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_79911000_1429540440');if (count($_from)):
-    foreach ($_from AS $this->_var['cat_0_79911000_1429540440']):
+        <?php $_from = $this->_var['thiscid111']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_25654700_1429715289');if (count($_from)):
+    foreach ($_from AS $this->_var['cat_0_25654700_1429715289']):
 ?>
-        <a href="<?php echo $this->_var['cat_0_79911000_1429540440']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_79911000_1429540440']['name']; ?></a>
+        <a href="<?php echo $this->_var['cat_0_25654700_1429715289']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_25654700_1429715289']['name']; ?></a>
         <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
         <?php endif; ?>
         <?php if ($this->_var['goods_cat']['name'] == '康复护理'): ?>
-        <?php $_from = $this->_var['thiscid124']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_79924200_1429540440');if (count($_from)):
-    foreach ($_from AS $this->_var['cat_0_79924200_1429540440']):
+        <?php $_from = $this->_var['thiscid124']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_25667000_1429715289');if (count($_from)):
+    foreach ($_from AS $this->_var['cat_0_25667000_1429715289']):
 ?>
-        <a href="<?php echo $this->_var['cat_0_79924200_1429540440']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_79924200_1429540440']['name']; ?></a>
+        <a href="<?php echo $this->_var['cat_0_25667000_1429715289']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_25667000_1429715289']['name']; ?></a>
         <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
         <?php endif; ?>
         <?php if ($this->_var['goods_cat']['name'] == '电子电器'): ?>
-        <?php $_from = $this->_var['thiscid135']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_79936400_1429540440');if (count($_from)):
-    foreach ($_from AS $this->_var['cat_0_79936400_1429540440']):
+        <?php $_from = $this->_var['thiscid135']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_25678800_1429715289');if (count($_from)):
+    foreach ($_from AS $this->_var['cat_0_25678800_1429715289']):
 ?>
-        <a href="<?php echo $this->_var['cat_0_79936400_1429540440']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_79936400_1429540440']['name']; ?></a>
+        <a href="<?php echo $this->_var['cat_0_25678800_1429715289']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_25678800_1429715289']['name']; ?></a>
         <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
         <?php endif; ?>
         <?php if ($this->_var['goods_cat']['name'] == '日常用品'): ?>
-        <?php $_from = $this->_var['thiscid136']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_79948700_1429540440');if (count($_from)):
-    foreach ($_from AS $this->_var['cat_0_79948700_1429540440']):
+        <?php $_from = $this->_var['thiscid136']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_25691100_1429715289');if (count($_from)):
+    foreach ($_from AS $this->_var['cat_0_25691100_1429715289']):
 ?>
-        <a href="<?php echo $this->_var['cat_0_79948700_1429540440']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_79948700_1429540440']['name']; ?></a>
+        <a href="<?php echo $this->_var['cat_0_25691100_1429715289']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_25691100_1429715289']['name']; ?></a>
         <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
         <?php endif; ?>
         <?php if ($this->_var['goods_cat']['name'] == '孝心礼品'): ?>
-        <?php $_from = $this->_var['thiscid138']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_79962100_1429540440');if (count($_from)):
-    foreach ($_from AS $this->_var['cat_0_79962100_1429540440']):
+        <?php $_from = $this->_var['thiscid138']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat_0_25702900_1429715289');if (count($_from)):
+    foreach ($_from AS $this->_var['cat_0_25702900_1429715289']):
 ?>
-        <a href="<?php echo $this->_var['cat_0_79962100_1429540440']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_79962100_1429540440']['name']; ?></a>
+        <a href="<?php echo $this->_var['cat_0_25702900_1429715289']['url']; ?>" class="changeBnt1" id="xxlChg"><?php echo $this->_var['cat_0_25702900_1429715289']['name']; ?></a>
         <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
         <?php endif; ?>
         </div>

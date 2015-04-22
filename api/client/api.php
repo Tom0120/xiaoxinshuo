@@ -1,6 +1,6 @@
 <?php
 
-define('IN_ECS', true);
+define('IN_APP', true);
 
 include_once './includes/init.php';
 

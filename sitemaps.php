@@ -36,7 +36,7 @@ class sitemap
     }
 }
 
-define('IN_ECS', true);
+define('IN_APP', true);
 define('INIT_NO_USERS', true);
 define('INIT_NO_SMARTY', true);
 require(dirname(__FILE__) . '/includes/init.php');
